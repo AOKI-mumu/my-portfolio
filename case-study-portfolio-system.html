@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio System Design · Lin Han hui</title>
+    <script>
+      document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=block"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="case-page">
+    <header class="topbar case-topbar" aria-label="Site navigation">
+      <a class="brand case-logo" href="./index.html" aria-label="Back to home">
+        <span class="brand-text">Lin Han hui</span>
+      </a>
+      <button class="nav-menu-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation">
+        <span>MENU</span>
+        <i aria-hidden="true"></i>
+      </button>
+      <nav class="nav-links case-links" id="siteNav">
+        <a href="./index.html#works" data-nav-index="01" data-i18n="nav-works">Works</a>
+        <a href="./index.html#about" data-nav-index="02" data-i18n="nav-about">About</a>
+        <a href="./resume.html" data-nav-index="03" data-i18n="nav-resume">Resume</a>
+        <a href="mailto:15895838711@163.com" data-nav-index="04" data-i18n="nav-contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-label">LIGHT</span>
+        </button>
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-text">中文</span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="detail-hero" id="overview">
+        <a class="back-link" href="./index.html" data-i18n="cs-back">← Back to works</a>
+        <h1 data-i18n="portfolio-title">让作品集记住决策：从静态展示到持续生长的产品叙事</h1>
+        <p class="detail-intro" data-i18n="portfolio-intro">
+          我不想把这个作品集做成项目截图合集。它需要解释一个混合型角色：产品思考、UX/UI、AI SaaS 工作、SEO 内容、数据复盘和代码协作。所以我从 0 到 1 搭了一个双语作品集，用暗色 editorial 界面、可复用 case-study 结构和本地 memory 文件，避免后续迭代越改越散。
+        </p>
+        <div class="detail-meta">
+          <div><strong data-i18n="cs-meta-role-label">Role</strong><span data-i18n="portfolio-meta-role">产品定位、UX/UI、内容策略、前端协作</span></div>
+          <div><strong data-i18n="cs-meta-product-label">Product</strong><span data-i18n="portfolio-meta-product">个人作品集网站</span></div>
+          <div><strong data-i18n="cs-meta-scope-label">Scope</strong><span data-i18n="portfolio-meta-scope">首页、案例页、简历页、视觉系统、双语文案、本地 memory</span></div>
+          <div><strong data-i18n="case-artifacts-label">产物</strong><span data-i18n="portfolio-meta-artifacts">网站页面、设计规则、内容规则、当前状态 memory、backlog</span></div>
+        </div>
+        <div class="metric-strip" aria-label="Project proof points">
+          <div><strong>3</strong><span data-i18n="portfolio-metric-1">核心页面：首页、案例页、简历页</span></div>
+          <div><strong>2</strong><span data-i18n="portfolio-metric-2">通过一个内容层规划双语模式</span></div>
+          <div><strong>8</strong><span data-i18n="portfolio-metric-3">可复用 case-study 段落结构</span></div>
+          <div><strong>5</strong><span data-i18n="portfolio-metric-4">指导未来迭代的 memory 文件</span></div>
+        </div>
+      </section>
+
+      <section class="detail-section" id="context">
+        <h2 data-i18n="portfolio-h2-context">01. 项目背景</h2>
+        <p data-i18n="portfolio-context-p1">
+          我的工作不太适合被放进纯 UI 作品集里。很多工作发生在页面结构、SEO 系统、模型更新、产品决策、数据复盘和开发交接里。
+        </p>
+        <p data-i18n="portfolio-context-p2">
+          如果只展示最终界面，最重要的工作会被藏掉。我需要一个网站，既能呈现产品思考、上线结果和设计品味，也能表达我与 AI 和代码协作的能力，同时避免变成普通模板。
+        </p>
+      </section>
+
+      <section class="detail-section" id="problem">
+        <h2 data-i18n="portfolio-h2-problem">02. 核心问题</h2>
+        <p data-i18n="portfolio-problem-p">
+          最难的是定位。我不想只呈现为 UI 设计师，也不想让网站像一份排版更漂亮的产品经理简历。它必须同时让人看到两面：产品判断和视觉执行。
+        </p>
+        <ul>
+          <li data-i18n="portfolio-problem-li-1">首页需要让访客快速理解我的方向。</li>
+          <li data-i18n="portfolio-problem-li-2">案例页需要和首页像同一个网站，而不是独立文章模板。</li>
+          <li data-i18n="portfolio-problem-li-3">项目故事需要展示背景、问题、策略、决策、证据、结果和下一步。</li>
+          <li data-i18n="portfolio-problem-li-4">网站需要双语支持，但不应该手动复制两套页面。</li>
+          <li data-i18n="portfolio-problem-li-5">AI 协作需要持久 memory，避免设计决策在多次会话中漂移。</li>
+        </ul>
+      </section>
+
+      <section class="detail-section" id="strategy">
+        <h2 data-i18n="portfolio-h2-strategy">03. 产品策略</h2>
+        <p data-i18n="portfolio-strategy-p1">
+          我把这个网站当成一个小产品来做。首页只有一个任务：让访客快速理解我是谁，并尽快进入最有说服力的证据。
+        </p>
+        <p data-i18n="portfolio-strategy-p2">
+          案例页负责放慢阅读节奏，解释具体工作。简历页则保持足够朴素，方便快速扫描。
+        </p>
+        <div class="strategy-list">
+          <div><strong data-i18n="portfolio-strategy-1-title">首页</strong><span data-i18n="portfolio-strategy-1-text">快速定位，并突出最强项目证据，而不是拥挤项目网格。</span></div>
+          <div><strong data-i18n="portfolio-strategy-2-title">案例页</strong><span data-i18n="portfolio-strategy-2-text">用证据导向的叙事解释背景、决策、系统和结果。</span></div>
+          <div><strong data-i18n="portfolio-strategy-3-title">简历页</strong><span data-i18n="portfolio-strategy-3-text">给招聘者一条文本优先的快速扫描路径。</span></div>
+          <div><strong data-i18n="portfolio-strategy-4-title">Memory 层</strong><span data-i18n="portfolio-strategy-4-text">用本地规则和当前状态文件保持未来迭代的一致性。</span></div>
+        </div>
+      </section>
+
+      <section class="detail-section" id="experience">
+        <h2 data-i18n="portfolio-h2-experience">04. 体验设计</h2>
+        <p data-i18n="portfolio-experience-p1">
+          首页为快速浏览而设计。它从紧凑的身份展示进入精选案例，而不是堆满项目网格。这样能把注意力集中在最强的证据：aitryon.art 产品体验重构。
+        </p>
+        <p data-i18n="portfolio-experience-p2">
+          案例页采用稳定结构，让未来案例不需要每次重新发明叙事方式。它也避免我把 case study 写成松散的过程日记。每一段都有明确任务：解释业务背景、产品决策、设计动作和结果。
+        </p>
+        <div class="system-grid">
+          <div><strong data-i18n="portfolio-experience-1-title">背景</strong><span data-i18n="portfolio-experience-1-text">先解释产品和市场情况，再展示设计工作。</span></div>
+          <div><strong data-i18n="portfolio-experience-2-title">问题</strong><span data-i18n="portfolio-experience-2-text">把分散痛点整理成清晰产品挑战。</span></div>
+          <div><strong data-i18n="portfolio-experience-3-title">策略</strong><span data-i18n="portfolio-experience-3-text">展示重构背后的决策逻辑和取舍。</span></div>
+          <div><strong data-i18n="portfolio-experience-4-title">结果</strong><span data-i18n="portfolio-experience-4-text">把视觉和产品变化连接到可衡量或方向性的影响。</span></div>
+        </div>
+      </section>
+
+      <section class="detail-section" id="visual">
+        <h2 data-i18n="portfolio-h2-visual">05. 视觉系统</h2>
+        <p data-i18n="portfolio-visual-p1">
+          我有意避开明亮的 SaaS 模板感。这个网站需要更专注，也稍微锋利一点，因为我希望读者先看工作，而不是先被装饰吸引。所以我选择了 dark editorial 方向、克制对比，以及少量酸性黄绿色强调。
+        </p>
+        <p data-i18n="portfolio-visual-p2">
+          设计系统保留 Syne 做标志性展示标题，用 Space Grotesk 处理更长的案例标题，并用 regular IBM Plex Sans 承载正文和 UI。字号层级有意保持克制。早期迭代在详情页上过于海报化，所以当前系统更偏向冷静标题、可读正文和更严格的间距纪律。
+        </p>
+        <div class="insight-grid">
+          <div><strong data-i18n="portfolio-visual-1-title">一致性</strong><span data-i18n="portfolio-visual-1-text">首页、案例页和简历页共用一套视觉语言。</span></div>
+          <div><strong data-i18n="portfolio-visual-2-title">克制</strong><span data-i18n="portfolio-visual-2-text">强调色只用于 active 状态、证明点和关键操作。</span></div>
+          <div><strong data-i18n="portfolio-visual-3-title">节奏</strong><span data-i18n="portfolio-visual-3-text">稳定图片比例和紧凑排版保护 editorial 阅读节奏。</span></div>
+        </div>
+      </section>
+
+      <section class="detail-section" id="memory">
+        <h2 data-i18n="portfolio-h2-memory">06. Memory 系统</h2>
+        <p data-i18n="portfolio-memory-p1">
+          真正让这个网站后续更好维护的，是 memory 文件。它们记录当前状态、字体选择、内容规则、双语决策和 backlog。
+        </p>
+        <p data-i18n="portfolio-memory-p2">
+          下次我再借助 AI 继续改时，不需要重新解释同一批设计决策，也不用提醒它为什么这个网站不能变成普通模板。
+        </p>
+        <div class="system-grid">
+          <div><strong>CURRENT_STATE.md</strong><span data-i18n="portfolio-memory-1-text">记录网站当前状态和未来会话优先读取的上下文。</span></div>
+          <div><strong>design.md</strong><span data-i18n="portfolio-memory-2-text">定义当前视觉方向、字体、布局逻辑和设计边界。</span></div>
+          <div><strong>CONTENT_RULES.md</strong><span data-i18n="portfolio-memory-3-text">让文案、案例叙事、指标和双语规则保持一致。</span></div>
+          <div><strong>BACKLOG.md</strong><span data-i18n="portfolio-memory-4-text">跟踪待补视觉资产、证据、打磨项和未来结构决策。</span></div>
+        </div>
+      </section>
+
+      <section class="detail-section" id="compare">
+        <h2 data-i18n="portfolio-h2-compare">07. 从 0 到 1</h2>
+        <div class="comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="cs-th-1">Dimension</th>
+                <th data-i18n="portfolio-th-start">起点</th>
+                <th data-i18n="portfolio-th-system">形成的系统</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="portfolio-table-1-1">定位</td>
+                <td data-i18n="portfolio-table-1-2">需要把 UI、产品、AI 和增长能力组织成一个可理解身份</td>
+                <td data-i18n="portfolio-table-1-3">形成 AI / Growth Product Designer & PM 的清晰定位</td>
+              </tr>
+              <tr>
+                <td data-i18n="portfolio-table-2-1">首页</td>
+                <td data-i18n="portfolio-table-2-2">需要一个让访客快速进入重点证据的首页</td>
+                <td data-i18n="portfolio-table-2-3">用身份、精选案例、关于和联系构成第一屏到证据的路径</td>
+              </tr>
+              <tr>
+                <td data-i18n="portfolio-table-3-1">案例页</td>
+                <td data-i18n="portfolio-table-3-2">需要一种能持续复用的项目叙事方式</td>
+                <td data-i18n="portfolio-table-3-3">建立 8 段式 case-study 结构，并和首页共享同一套 dark editorial 系统</td>
+              </tr>
+              <tr>
+                <td data-i18n="portfolio-table-4-1">内容</td>
+                <td data-i18n="portfolio-table-4-2">需要让设计和内容判断能跨多次 AI 协作延续</td>
+                <td data-i18n="portfolio-table-4-3">用当前状态、设计规则、内容规则和 backlog 指导每次迭代</td>
+              </tr>
+              <tr>
+                <td data-i18n="portfolio-table-5-1">语言</td>
+                <td data-i18n="portfolio-table-5-2">需要同时服务中文和英文读者</td>
+                <td data-i18n="portfolio-table-5-3">已上线双语切换，并用内容规则让英文和中文文案成对维护</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="detail-section" id="outcome">
+        <h2 data-i18n="portfolio-h2-outcome">08. 结果</h2>
+        <div class="detail-outcomes">
+          <div><strong data-i18n="portfolio-outcome-1-title">更清晰</strong><span data-i18n="portfolio-outcome-1-text">网站把产品设计、AI SaaS、增长、SEO 内容和上线工作连接成一个身份。</span></div>
+          <div><strong data-i18n="portfolio-outcome-2-title">更统一</strong><span data-i18n="portfolio-outcome-2-text">首页、案例页和简历页现在共享一致的 editorial 系统。</span></div>
+          <div><strong data-i18n="portfolio-outcome-3-title">可复用</strong><span data-i18n="portfolio-outcome-3-text">案例结构可以支持未来项目，不需要从空白页面开始。</span></div>
+          <div><strong data-i18n="portfolio-outcome-4-title">可持续</strong><span data-i18n="portfolio-outcome-4-text">Memory 层让设计决策能被未来 AI 协作继续使用。</span></div>
+        </div>
+        <p data-i18n="portfolio-outcome-p">
+          这个作品集本身也变成了一个 case study：先定义定位，再搭结构、定视觉规则，并留下足够的 memory，让下一次迭代能从同一个地方继续。
+        </p>
+      </section>
+
+      <section class="detail-section" id="next">
+        <h2 data-i18n="portfolio-h2-next">09. 下一步</h2>
+        <ul>
+          <li data-i18n="portfolio-next-li-1">补充更强的案例封面和过程图。</li>
+          <li data-i18n="portfolio-next-li-2">为指标补充证据截图或来源说明。</li>
+          <li data-i18n="portfolio-next-li-3">用同一叙事结构继续搭建未来案例页。</li>
+          <li data-i18n="portfolio-next-li-4">继续打磨首页、案例页和简历页的双语体验。</li>
+          <li data-i18n="portfolio-next-li-5">把设计 review 和 case-study 起草沉淀成可复用 skill。</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <nav class="case-rail" aria-label="Case study sections">
+      <a class="is-active" href="#context" data-section="context" aria-current="true"><span>01</span><strong data-i18n="cs-nav-context">Context</strong></a>
+      <a href="#problem" data-section="problem"><span>02</span><strong data-i18n="cs-nav-problem">Problem</strong></a>
+      <a href="#strategy" data-section="strategy"><span>03</span><strong data-i18n="cs-nav-strategy">Strategy</strong></a>
+      <a href="#experience" data-section="experience"><span>04</span><strong data-i18n="cs-nav-ux">UX</strong></a>
+      <a href="#visual" data-section="visual"><span>05</span><strong data-i18n="portfolio-nav-visual">视觉</strong></a>
+      <a href="#memory" data-section="memory"><span>06</span><strong data-i18n="portfolio-nav-memory">Memory</strong></a>
+      <a href="#compare" data-section="compare"><span>07</span><strong data-i18n="cs-nav-compare">Compare</strong></a>
+      <a href="#outcome" data-section="outcome"><span>08</span><strong data-i18n="cs-nav-outcome">Outcome</strong></a>
+      <a href="#next" data-section="next"><span>09</span><strong data-i18n="cs-nav-next">Next</strong></a>
+    </nav>
+    <script src="./js/script.js"></script>
+    <script src="./js/case-study.js"></script>
+  </body>
+</html>

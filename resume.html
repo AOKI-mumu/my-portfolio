@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume — Lin Han hui</title>
+    <script>
+      document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=block"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="case-page resume-page">
+    <header class="topbar" aria-label="Site navigation">
+      <a class="brand" href="./index.html#home" aria-label="Lin Han hui home">
+        <span class="brand-text">Lin Han hui</span>
+      </a>
+      <button class="nav-menu-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation">
+        <span>MENU</span>
+        <i aria-hidden="true"></i>
+      </button>
+      <nav class="nav-links" id="siteNav">
+        <a href="./index.html#works" data-nav-index="01" data-i18n="nav-works">Works</a>
+        <a href="./index.html#about" data-nav-index="02" data-i18n="nav-about">About</a>
+        <a href="./resume.html" data-nav-index="03" data-i18n="nav-resume">Resume</a>
+        <a href="mailto:15895838711@163.com" data-nav-index="04" data-i18n="nav-contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-label">LIGHT</span>
+        </button>
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-text">中文</span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="detail-hero">
+        <a class="back-link" href="./index.html#home" data-i18n="resume-back">← Back to home</a>
+        <h1 data-i18n="resume-title">Resume</h1>
+        <p class="detail-intro" data-i18n="resume-intro">
+          林瀚辉，AI SaaS 产品经理，设计背景转产品。做过 0-1 产品搭建、SEO 增长、页面改版和版本验收，也能参与低代码与前端协作，把需求从想法推进到上线。
+        </p>
+        <div class="resume-contact">
+          <span data-i18n="resume-edu">南京工程学院 · 本科</span>
+          <a href="mailto:15895838711@163.com">15895838711@163.com</a>
+          <span>WeChat: l15895838711</span>
+          <span>Guangzhou, China</span>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <h2 data-i18n="resume-profile-title">Profile</h2>
+        <p data-i18n="resume-profile">
+          熟悉 AI SaaS 产品从需求拆解、页面设计、SEO 内容、开发交接到版本验收的流程。日常会用 AI 做竞品分析、SEO 文案和需求草稿，也参与部分前端协作，能把增长方案拆成可上线的页面和任务。
+        </p>
+      </section>
+
+      <section class="detail-section">
+        <h2 data-i18n="resume-experience-title">Experience</h2>
+        <div class="resume-list">
+          <article class="resume-item">
+            <header>
+              <h3 data-i18n="resume-exp-1-title">广州六六柒柒科技有限公司｜产品经理</h3>
+              <time>2025.05 - Now</time>
+            </header>
+            <p data-i18n="resume-exp-1-desc">面向海外用户的 C 端 AI SaaS 产品，覆盖 AI 图像生成、虚拟试衣、3D 生成和 AI 视频等场景。</p>
+            <ul>
+              <li data-i18n="resume-exp-1-li-1">拆解 AI 生成类功能需求，补齐用户路径、异常状态、生成限制和后台配置逻辑。</li>
+              <li data-i18n="resume-exp-1-li-2">输出高保真页面和交互说明，与前端对齐状态、组件和响应式细节。</li>
+              <li data-i18n="resume-exp-1-li-3">使用 AI 批量生成 SEO 页面初稿，再根据关键词、搜索意图和转化路径做人工改写。</li>
+              <li data-i18n="resume-exp-1-li-4">参与前端交接，补充部分页面样式、文案配置和低代码调整，减少设计到开发之间的返工。</li>
+              <li data-i18n="resume-exp-1-li-5">负责版本验收，记录生成失败、支付链路、页面适配和文案展示问题，并跟进修复上线。</li>
+            </ul>
+          </article>
+
+          <article class="resume-item">
+            <header>
+              <h3 data-i18n="resume-exp-2-title">SIANEXX PTE. LTD（香港）｜UI 设计师</h3>
+              <time>2024.11 - 2025.05</time>
+            </header>
+            <ul>
+              <li data-i18n="resume-exp-2-li-1">设计公司官网页面和活动宣传物料，覆盖网页端、社媒图和线下展示内容。</li>
+              <li data-i18n="resume-exp-2-li-2">参与官网从 0 到 1 搭建，完成页面风格探索、首屏布局和核心模块设计。</li>
+              <li data-i18n="resume-exp-2-li-3">独立输出 UI 设计稿和切图资源，跟进开发还原度并调整视觉细节。</li>
+            </ul>
+          </article>
+
+          <article class="resume-item">
+            <header>
+              <h3 data-i18n="resume-exp-3-title">江苏粒度科技有限公司｜UI 设计师</h3>
+              <time>2024.03 - 2024.11</time>
+            </header>
+            <ul>
+              <li data-i18n="resume-exp-3-li-1">负责产品界面、运营活动页和宣传页面设计。</li>
+              <li data-i18n="resume-exp-3-li-2">参与新功能早期讨论，输出页面结构、视觉方向和关键交互方案。</li>
+              <li data-i18n="resume-exp-3-li-3">支持运营物料设计，也参与需求讨论和开发还原检查。</li>
+            </ul>
+          </article>
+
+          <article class="resume-item">
+            <header>
+              <h3 data-i18n="resume-exp-4-title">南京工程学院艺术设计学院设计工作坊｜实习设计师</h3>
+              <time>2022.03 - 2023.12</time>
+            </header>
+            <ul>
+              <li data-i18n="resume-exp-4-li-1">协助老师完成在线产品 UI 改版工作。</li>
+              <li data-i18n="resume-exp-4-li-2">完成学院宣发任务，包括活动策划、视觉设计与物料设计。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <h2 data-i18n="resume-projects-title">Projects</h2>
+        <div class="resume-list">
+          <article class="resume-item">
+            <header>
+              <h3 data-i18n="resume-project-1-title">aitryon.art｜产品经理（增长与体验优化）</h3>
+              <time>AI Try-On / Image / Video</time>
+            </header>
+            <ul>
+              <li data-i18n="resume-project-1-li-1">基于关键词和竞品页面，提出 SEO 页面矩阵和站内结构优化方案。</li>
+              <li data-i18n="resume-project-1-li-2">输出改版 PRD、高保真页面和 SEO 文案，重点优化首屏信息、功能入口和转化路径。</li>
+              <li data-i18n="resume-project-1-li-3">与开发推进改版上线，跟踪 PV、转化率、停留率和搜索流量变化。</li>
+              <li data-i18n="resume-project-1-li-4">改版后页面浏览量提升至 60K+，核心转化率在阶段内翻倍，页面停留表现提升至 33%。</li>
+            </ul>
+          </article>
+
+          <article class="resume-item">
+            <header>
+              <h3 data-i18n="resume-project-2-title">flaq.ai｜AI 模型/API 平台内容与免费工具引流</h3>
+              <time>AI API / Docs / Free Tools</time>
+            </header>
+            <ul>
+              <li data-i18n="resume-project-2-li-1">区分开发者查 API 和创作者试模型两类入口，梳理模型页、文档页和免费生成工具页的承接关系。</li>
+              <li data-i18n="resume-project-2-li-2">围绕 Nano Banana、GPT Image 2 等高搜索需求模型，规划免费生成页的首屏表达、示例内容、参数说明和转化入口。</li>
+              <li data-i18n="resume-project-2-li-3">为图像、视频、LLM 等模型沉淀 README 和 API 示例模板，降低多厂商模型文档的扩展成本。</li>
+              <li data-i18n="resume-project-2-li-4">结合本地 AI 工作流产出并校验模型介绍、多语言 SEO 文案和文档内容，覆盖 78 个模型页、450 份文档和 1000+ 本地化 README。</li>
+            </ul>
+          </article>
+
+          <article class="resume-item">
+            <header>
+              <h3 data-i18n="resume-project-3-title">heydream.im｜AI 图像 / 视频 / 3D 工具矩阵</h3>
+              <time>Image / Video / 3D</time>
+            </header>
+            <ul>
+              <li data-i18n="resume-project-3-li-1">梳理 AI 图像、视频、3D 和免费工具的产品地图，确定功能页、模型页和工具页的上线优先级。</li>
+              <li data-i18n="resume-project-3-li-2">负责虚拟试穿、AI 视频、图像生成、图片转 3D 等页面的高保真设计、SEO 文案、功能卖点、教程和 FAQ。</li>
+              <li data-i18n="resume-project-3-li-3">把不同工具能力转成表单字段、上传限制、示例提示词和转化按钮，与开发对齐页面实现细节。</li>
+              <li data-i18n="resume-project-3-li-4">参与 15 种语言页面文案与 SEO metadata 校验，为工具页收录和后续扩展打基础。</li>
+            </ul>
+          </article>
+
+          <article class="resume-item">
+            <header>
+              <h3 data-i18n="resume-project-4-title">musicmaker.im｜AI 音乐产品与音频工具矩阵</h3>
+              <time>AI Music</time>
+            </header>
+            <ul>
+              <li data-i18n="resume-project-4-li-1">参与 AI 音乐产品立项，协助梳理 MVP 范围、版本节奏、核心功能优先级和页面上线顺序。</li>
+              <li data-i18n="resume-project-4-li-2">按用户任务拆分 AI Song Generator、Lyrics、Vocal Remover、Music to MIDI、Audio Converter 等工具页的产品定位。</li>
+              <li data-i18n="resume-project-4-li-3">负责页面设计与 SEO 内容，结合竞品、搜索词和生成流程调整首屏表达、功能文案、教程和 FAQ。</li>
+              <li data-i18n="resume-project-4-li-4">与开发对齐表单字段、生成流程、历史记录入口和响应式细节，项目上线后月浏览量增长至约 20K。</li>
+            </ul>
+          </article>
+
+          <article class="resume-item">
+            <header>
+              <h3 data-i18n="resume-project-5-title">ugcmaker.org｜UGC 广告生成工具矩阵</h3>
+              <time>UGC Ads / Image / Video</time>
+            </header>
+            <ul>
+              <li data-i18n="resume-project-5-li-1">围绕 UGC 广告、TikTok 视频、商品图和 Pinterest Pin 等营销场景，拆分工具页定位和产品入口。</li>
+              <li data-i18n="resume-project-5-li-2">负责 7 个核心功能页的页面设计、SEO 文案、示例素材、提示词、应用场景、教程和 FAQ。</li>
+              <li data-i18n="resume-project-5-li-3">建立商品图、广告脚本、Pinterest Pin 等示例内容标准，让页面能直观看出输入素材和生成结果的对应关系。</li>
+              <li data-i18n="resume-project-5-li-4">按 15 种语言组织页面 JSON 内容，与开发协作同步导航、侧边栏、Footer 和 Sitemap 的页面入口。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <h2 data-i18n="resume-skills-title">Skills</h2>
+        <div class="resume-tags">
+          <span>需求分析</span>
+          <span>信息架构</span>
+          <span>交互设计</span>
+          <span>高保真设计</span>
+          <span>版本测试</span>
+          <span>数据复盘</span>
+          <span>SEO 内容系统</span>
+          <span>多语言 SEO</span>
+          <span>内容结构化</span>
+          <span>前端协同</span>
+          <span>低代码调整</span>
+          <span>Figma</span>
+          <span>Claude Code</span>
+          <span>Codex</span>
+          <span>Cursor</span>
+          <span>英语六级</span>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

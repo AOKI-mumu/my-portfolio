@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>aitryon.art - Product Experience Redesign · Lin Han hui</title>
+    <script>
+      document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=block"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="case-page">
+    <header class="topbar case-topbar" aria-label="Site navigation">
+      <a class="brand case-logo" href="./index.html" aria-label="Back to home">
+        <span class="brand-text">Lin Han hui</span>
+      </a>
+      <button class="nav-menu-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation">
+        <span>MENU</span>
+        <i aria-hidden="true"></i>
+      </button>
+      <nav class="nav-links case-links" id="siteNav">
+        <a href="./index.html#works" data-nav-index="01" data-i18n="nav-works">Works</a>
+        <a href="./index.html#about" data-nav-index="02" data-i18n="nav-about">About</a>
+        <a href="./resume.html" data-nav-index="03" data-i18n="nav-resume">Resume</a>
+        <a href="mailto:15895838711@163.com" data-nav-index="04" data-i18n="nav-contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-label">LIGHT</span>
+        </button>
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-text">中文</span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="detail-hero" id="overview">
+        <a class="back-link" href="./index.html" data-i18n="cs-back">← Back to works</a>
+        <h1 data-i18n="cs-title">From AI Try-On tool to AI image & video creation platform: aitryon.art product experience redesign</h1>
+        <p class="detail-intro" data-i18n="cs-intro">
+          aitryon.art had outgrown its original try-on positioning. I reframed it as an AI image and video creation platform, redesigned the homepage generation entry, and connected that entry with tool pages, model pages, and the post-login flow. After launch, visit duration rose 83.3%, subscription conversion rose 40%, and monthly net profit was about 2.4x higher.
+        </p>
+        <div class="detail-meta">
+          <div><strong data-i18n="cs-meta-role-label">Role</strong><span data-i18n="cs-meta-role">Product strategy, UX/UI, SEO content system</span></div>
+          <div><strong data-i18n="cs-meta-product-label">Product</strong><span data-i18n="cs-meta-product">AI image & video creation platform</span></div>
+          <div><strong data-i18n="cs-meta-duration-label">Duration</strong><span data-i18n="cs-meta-duration">~1 month, shipped via multiple small versions</span></div>
+          <div><strong data-i18n="cs-meta-scope-label">Scope</strong><span data-i18n="cs-meta-scope">Homepage, generation entry, tool pages, model landing pages, SEO structure</span></div>
+        </div>
+        <div class="metric-strip" aria-label="Project outcome metrics">
+          <div><strong>+83.3%</strong><span data-i18n="cs-metric-1">visit duration lift</span></div>
+          <div><strong>+12.8%</strong><span data-i18n="cs-metric-2">pages per visit lift</span></div>
+          <div><strong>+40%</strong><span data-i18n="cs-metric-3">subscription conversion lift</span></div>
+          <div><strong>~2.4x</strong><span data-i18n="cs-metric-4">monthly net profit lift</span></div>
+        </div>
+      </section>
+
+      <section class="detail-section" id="project">
+        <h2 data-i18n="cs-h2-01">01. Product Context</h2>
+        <p data-i18n="cs-01-p1">
+          Before this project, aitryon.art was still mainly perceived as an AI try-on tool. Vertical tools like this could work in the early days: users were drawn in by a single try-on toy, such as clothing, color, or tattoo, completed a trial, and sometimes even paid because it happened to solve their need.
+        </p>
+        <p data-i18n="cs-01-p2">
+          That premise started to break as general image models improved. Many lightweight try-on needs no longer required a dedicated tool. At the same time, higher-intent users cared more about model quality, batch creation, product images, short videos, and social content.
+        </p>
+        <div class="research-note">
+          <strong data-i18n="cs-01-note-label">Basis for the judgment</strong>
+          <span data-i18n="cs-01-note">
+            The signal did not come from one channel. Users were arriving through Google, TikTok, YouTube, Reddit, Product Hunt, AI directories, and external links. That told me the product was no longer being discovered only as a try-on tool. The market was moving the same way: general image models were absorbing simple try-on use cases, while video models were becoming part of creator workflows. The product needed to move with that shift.
+          </span>
+        </div>
+        <div class="insight-grid">
+          <div><strong data-i18n="cs-01-grid-1-label">Old growth logic</strong><span data-i18n="cs-01-grid-1">Use vertical try-on tools to catch curiosity traffic and long-tail search, solving one-off small needs.</span></div>
+          <div><strong data-i18n="cs-01-grid-2-label">New user intent</strong><span data-i18n="cs-01-grid-2">Try new models, generate images and videos, produce product imagery, short videos, or social content.</span></div>
+          <div><strong data-i18n="cs-01-grid-3-label">Product pivot</strong><span data-i18n="cs-01-grid-3">From a tool collection to a more professional AI image & video creation platform.</span></div>
+        </div>
+      </section>
+
+      <section class="detail-section" id="challenge">
+        <h2 data-i18n="cs-h2-02">02. Core Problem</h2>
+        <p data-i18n="cs-02-p1">
+          The old page introduced the product, but it did not explain fast enough what aitryon.art had become. Users still had to read, choose a tool, move to another page, upload, log in, and then generate. The path had too many small handoffs.
+        </p>
+        <p data-i18n="cs-02-p2">
+          I split the problem into three layers: product positioning had not caught up with capability expansion; the homepage lacked a strong enough generation entry; SEO and tool pages drove traffic but content structure, page templates, and downstream generation experience were not unified.
+        </p>
+        <ul>
+          <li data-i18n="cs-02-li-1">The old homepage was display-first. Users had to find a tool, enter the tool page, then upload, log in, and generate.</li>
+          <li data-i18n="cs-02-li-2">Outward narrative still skewed toward try-on, unable to express compound capabilities across image, video, UGC, and avatars.</li>
+          <li data-i18n="cs-02-li-3">Homepage generation entry and tool page forms could pass parameters, but UI style and experience rhythm were inconsistent.</li>
+          <li data-i18n="cs-02-li-4">History entry existed, but visuals were dated; reviewing older history required jumping between generation and history.</li>
+          <li data-i18n="cs-02-li-5">Model pages and tool pages had SEO potential but needed more stable templates and continuous update mechanisms.</li>
+        </ul>
+      </section>
+
+      <section class="detail-section" id="process">
+        <h2 data-i18n="cs-h2-03">03. Product Strategy</h2>
+        <p data-i18n="cs-03-p1">
+          A visual refresh would not solve the problem. The homepage needed to become a generation entry. Model pages and tool pages also needed to work as part of the product path instead of stopping at traffic.
+        </p>
+        <p data-i18n="cs-03-p2">
+          I prioritized shifting the product narrative from a single-point try-on tool to an AI image & video creation platform. The homepage now defaults to AI Video, because video model heat and conversion potential are higher; AI Image and Virtual Try On are still preserved so old and new users can find their own entries.
+        </p>
+        <div class="strategy-list">
+          <div><strong data-i18n="cs-03-grid-1-label">Start generation earlier</strong><span data-i18n="cs-03-grid-1">Users can upload, write a prompt, choose a type, pick a model, and continue from the first screen.</span></div>
+          <div><strong data-i18n="cs-03-grid-2-label">Make SEO pages useful after the click</strong><span data-i18n="cs-03-grid-2">Model and tool pages should help users understand what to generate next after they land.</span></div>
+          <div><strong data-i18n="cs-03-grid-3-label">Ship in smaller steps</strong><span data-i18n="cs-03-grid-3">I changed the homepage and entry stitching first, while leaving the full generation workspace for the next phase.</span></div>
+          <div><strong data-i18n="cs-03-grid-4-label">Keep the Studio direction open</strong><span data-i18n="cs-03-grid-4">The fragmented form, result, and history experience became the next product problem to solve.</span></div>
+        </div>
+      </section>
+
+      <figure class="detail-wide-image detail-contained-image">
+        <img src="./assets/cases/aitryon/aitryon-landing-before-current.png" alt="Earlier aitryon.art landing page design draft" />
+        <figcaption data-i18n="cs-fig-before">Before: the page felt like a lightweight try-on landing page with a content display. Platform capability was not clear.</figcaption>
+      </figure>
+
+      <section class="detail-section" id="solution">
+        <h2 data-i18n="cs-h2-04">04. Experience Redesign</h2>
+        <p data-i18n="cs-04-p1">
+          The redesigned homepage lets users start before they fully understand the whole site. They can upload an image, write a prompt, choose AI Video, AI Image, or Virtual Try On, then pick a model and template. If they need to log in, their input is preserved and carried into the right tool page afterward.
+        </p>
+        <ul>
+          <li data-i18n="cs-04-li-1">Homepage defaults to AI Video to capture higher-heat, higher-conversion video generation intent.</li>
+          <li data-i18n="cs-04-li-2">Prompts, uploaded images, models, templates, and related generation params from the homepage carry into the tool page.</li>
+          <li data-i18n="cs-04-li-3">The generation page was not fully rebuilt in this version. I only adjusted color and entry stitching, because AI Studio comes next.</li>
+          <li data-i18n="cs-04-li-4">History entry was preserved as-is, but flagged as the key experience problem to unify in Studio next.</li>
+        </ul>
+      </section>
+
+      <figure class="detail-wide-image detail-contained-image">
+        <img src="./assets/cases/aitryon/aitryon-platform-after.png" alt="aitryon.art platform page after redesign" />
+        <figcaption data-i18n="cs-fig-after">After: the product narrative moved toward an AI image and video creation platform. The image shows the structural alignment cut; live copy was adjusted later.</figcaption>
+      </figure>
+
+      <section class="detail-section" id="seo">
+        <h2 data-i18n="cs-h2-05">05. SEO Content System</h2>
+        <p data-i18n="cs-05-p1">
+          SEO was not a separate content task in this project. It was part of the product path. Model pages captured demand by model name, and tool pages captured task-based intent. Both needed to guide users toward generation.
+        </p>
+        <p data-i18n="cs-05-p2">
+          To let future model and tool pages keep scaling, I built a JSON-based copy generation skill. It can batch-produce baseline English copy while keeping examples, features, advantages, use cases, how-to guides, related tools, and FAQ modules consistent in structure, H2 phrasing, and SEO keywords. I still review the output by hand so the pages read like product copy, not keyword stuffing.
+        </p>
+        <div class="system-grid">
+          <div><strong data-i18n="cs-05-grid-1-label">Model landing pages</strong><span data-i18n="cs-05-grid-1">Capture search intent by model name, introduce model capability, and guide users into the matching generation tool.</span></div>
+          <div><strong data-i18n="cs-05-grid-2-label">Tool pages</strong><span data-i18n="cs-05-grid-2">Catch task-based needs such as video generation, image generation, and virtual try-on workflows.</span></div>
+          <div><strong data-i18n="cs-05-grid-3-label">Articles</strong><span data-i18n="cs-05-grid-3">Editorial content supplements long-tail keywords, tutorials, and topical pieces.</span></div>
+          <div><strong data-i18n="cs-05-grid-4-label">Copy skill</strong><span data-i18n="cs-05-grid-4">JSON content structure improves update efficiency and keeps English SEO copy and translation logic consistent.</span></div>
+        </div>
+      </section>
+
+      <figure class="detail-wide-image detail-contained-image">
+        <img src="./assets/cases/aitryon/aitryon-tool-before.png" alt="Earlier SEO tool page design draft" />
+        <figcaption data-i18n="cs-fig-tool-before">Before: early tool pages had basic SEO modules, but structure was thin and visual / content templates were not unified.</figcaption>
+      </figure>
+
+      <figure class="detail-wide-image detail-contained-image">
+        <img src="./assets/cases/aitryon/aitryon-tool-after.png" alt="Updated dark SEO tool page" />
+        <figcaption data-i18n="cs-fig-tool-after">After: tool pages became a clearer traffic-catching surface, including model, examples, features, related tools, FAQ, and articles.</figcaption>
+      </figure>
+
+      <section class="detail-section" id="comparison">
+        <h2 data-i18n="cs-h2-06">06. Before / After</h2>
+        <div class="comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="cs-th-1">Dimension</th>
+                <th data-i18n="cs-th-2">Before</th>
+                <th data-i18n="cs-th-3">After</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="cs-td-1-1">Product positioning</td>
+                <td data-i18n="cs-td-1-2">More like a single AI try-on tool</td>
+                <td data-i18n="cs-td-1-3">A more professional all-in-one AI image & video creation platform</td>
+              </tr>
+              <tr>
+                <td data-i18n="cs-td-2-1">Homepage role</td>
+                <td data-i18n="cs-td-2-2">Display product intro and hero image</td>
+                <td data-i18n="cs-td-2-3">Directly captures upload, prompt, model, and generation intent</td>
+              </tr>
+              <tr>
+                <td data-i18n="cs-td-3-1">Generation path</td>
+                <td data-i18n="cs-td-3-2">Users had to read the page first, then find a tool entry</td>
+                <td data-i18n="cs-td-3-3">After login, inputs are preserved and carried to the matching tool page to continue</td>
+              </tr>
+              <tr>
+                <td data-i18n="cs-td-4-1">SEO system</td>
+                <td data-i18n="cs-td-4-2">Page structure and copy update flow were not unified</td>
+                <td data-i18n="cs-td-4-3">Model pages, tool pages, articles, and the writing skill now support the same generation path</td>
+              </tr>
+              <tr>
+                <td data-i18n="cs-td-5-1">Next phase</td>
+                <td data-i18n="cs-td-5-2">Generation page, tool page, and history experience were fragmented</td>
+                <td data-i18n="cs-td-5-3">Plan AI Studio to unify generation forms, results, and history into one workflow</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="detail-section" id="outcome">
+        <h2 data-i18n="cs-h2-07">07. Outcome</h2>
+        <div class="detail-outcomes">
+          <div><strong>+83.3%</strong><span data-i18n="cs-out-1">visit duration: 18s → 33s</span></div>
+          <div><strong>+12.8%</strong><span data-i18n="cs-out-2">pages per visit: 1.79 → 2.02</span></div>
+          <div><strong>+40%</strong><span data-i18n="cs-out-3">subscription conversion: 0.5% → 0.7%</span></div>
+          <div><strong>~2.4x</strong><span data-i18n="cs-out-4">monthly net profit: ~$1,250 → ~$3,000</span></div>
+        </div>
+        <p data-i18n="cs-07-p">
+          I checked whether users stayed longer, opened more pages, subscribed more often, and whether the business result moved. All four moved in the right direction after the small releases.
+        </p>
+      </section>
+
+      <section class="detail-section" id="next">
+        <h2 data-i18n="cs-h2-08">08. Next: AI Studio</h2>
+        <p data-i18n="cs-08-p">
+          This release fixed the positioning and made generation easier to start. It also made the next problem more obvious: generation forms, result preview, and history still lived in separate places. AI Studio is the next step toward putting that workflow in one workspace.
+        </p>
+      </section>
+
+      <figure class="detail-wide-image detail-contained-image">
+        <img src="./assets/cases/aitryon/ai-studio-1.png" alt="AI Studio interface concept - unified generation workspace" />
+        <figcaption data-i18n="cs-fig-studio-1">AI Studio concept: a unified generation workspace integrating model selection, parameter setup, and result preview.</figcaption>
+      </figure>
+
+      <figure class="detail-wide-image detail-contained-image">
+        <img src="./assets/cases/aitryon/ai-studio-2.png" alt="AI Studio interface concept - history and workflow management" />
+        <figcaption data-i18n="cs-fig-studio-2">AI Studio concept: history management and workflow optimization, reducing page-to-page jumps.</figcaption>
+      </figure>
+
+      <section class="detail-section">
+        <h2></h2>
+        <ul>
+          <li data-i18n="cs-08-li-1">Unify model selection, templates, uploads, prompts, result preview, and history into AI Studio.</li>
+          <li data-i18n="cs-08-li-2">Let users filter history by model, type, and time to cut down jumps between generation and history.</li>
+          <li data-i18n="cs-08-li-3">Recommend the right image / video / virtual try-on workflow based on user source and search keywords.</li>
+          <li data-i18n="cs-08-li-4">Keep expanding organic search traffic via model pages, tool pages, and articles.</li>
+        </ul>
+      </section>
+    </main>
+
+    <nav class="case-rail" aria-label="Case study sections">
+      <a class="is-active" href="#project" data-section="project" aria-current="true"><span>01</span><strong data-i18n="cs-nav-context">Context</strong></a>
+      <a href="#challenge" data-section="challenge"><span>02</span><strong data-i18n="cs-nav-problem">Problem</strong></a>
+      <a href="#process" data-section="process"><span>03</span><strong data-i18n="cs-nav-strategy">Strategy</strong></a>
+      <a href="#solution" data-section="solution"><span>04</span><strong data-i18n="cs-nav-ux">UX</strong></a>
+      <a href="#seo" data-section="seo"><span>05</span><strong data-i18n="cs-nav-seo">SEO</strong></a>
+      <a href="#comparison" data-section="comparison"><span>06</span><strong data-i18n="cs-nav-compare">Compare</strong></a>
+      <a href="#outcome" data-section="outcome"><span>07</span><strong data-i18n="cs-nav-outcome">Outcome</strong></a>
+      <a href="#next" data-section="next"><span>08</span><strong data-i18n="cs-nav-next">Next</strong></a>
+    </nav>
+    <script src="./js/script.js"></script>
+    <script src="./js/case-study.js"></script>
+  </body>
+</html>

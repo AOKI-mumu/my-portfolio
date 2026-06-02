@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp *)",
+      "Bash(cp \"/Users/a6677/Desktop/AI Studio 1.png\" \"/Users/a6677/Desktop/视频剪辑尝试/website/assets/ai-studio-1.png\")",
+      "Bash(cp \"/Users/a6677/Desktop/AI Studio 2.png\" \"/Users/a6677/Desktop/视频剪辑尝试/website/assets/ai-studio-2.png\")",
+      "Bash(npx --no-install playwright --version)",
+      "Bash(curl -s http://localhost:8765/index.html)",
+      "Bash(open *)"
+    ]
+  }
+}

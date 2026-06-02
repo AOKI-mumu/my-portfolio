@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Skill System · Lin Han hui</title>
+    <script>
+      document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=block"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="case-page">
+    <header class="topbar case-topbar" aria-label="Site navigation">
+      <a class="brand case-logo" href="./index.html" aria-label="Back to home">
+        <span class="brand-text">Lin Han hui</span>
+      </a>
+      <button class="nav-menu-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation">
+        <span>MENU</span>
+        <i aria-hidden="true"></i>
+      </button>
+      <nav class="nav-links case-links" id="siteNav">
+        <a href="./index.html#works" data-nav-index="01" data-i18n="nav-works">Works</a>
+        <a href="./index.html#about" data-nav-index="02" data-i18n="nav-about">About</a>
+        <a href="./resume.html" data-nav-index="03" data-i18n="nav-resume">Resume</a>
+        <a href="mailto:15895838711@163.com" data-nav-index="04" data-i18n="nav-contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-label">LIGHT</span>
+        </button>
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-text">中文</span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="detail-hero" id="overview">
+        <a class="back-link" href="./index.html" data-i18n="cs-back">← Back to works</a>
+        <h1 data-i18n="skill-title">把内容、文档、视觉和素材整理，拆成四个本地 AI Skills</h1>
+        <p class="detail-intro" data-i18n="skill-intro">
+          我把四类重复任务拆成四个本地 skills：SEO JSON Writer 写网页 JSON 文案，Flaq Readme 写模型 README，Flaq Visual Prompts 写 cover/carousel 视觉 prompt，Asset Optimizer 处理素材命名和压缩。它们不是同一个项目里的四个步骤，而是四种不同工作，不能混在一个通用 prompt 里。
+        </p>
+        <div class="detail-meta">
+          <div><strong data-i18n="cs-meta-role-label">Role</strong><span data-i18n="skill-meta-role">产品工作流设计、AI Skill 设计、内容系统、质量规则</span></div>
+          <div><strong data-i18n="cs-meta-product-label">Product</strong><span data-i18n="skill-meta-product">本地 AI 辅助工作系统</span></div>
+          <div><strong data-i18n="cs-meta-scope-label">Scope</strong><span data-i18n="skill-meta-scope">SEO JSON、Flaq README、cover/carousel 视觉 prompt、素材整理</span></div>
+          <div><strong data-i18n="case-artifacts-label">产物</strong><span data-i18n="skill-meta-artifacts">4 个本地 skills、156 页 memory 索引、导入与 audit 脚本</span></div>
+        </div>
+        <div class="metric-strip" aria-label="Project proof points">
+          <div><strong>4</strong><span data-i18n="skill-metric-1">生产型 skill 模块</span></div>
+          <div><strong>156</strong><span data-i18n="skill-metric-2">本地 memory 索引内容页</span></div>
+          <div><strong>5</strong><span data-i18n="skill-metric-3">工作流层级：skill、参考、memory、脚本、审核</span></div>
+          <div><strong>4</strong><span data-i18n="skill-metric-4">主要 SEO 站点：aitryon、heydream、ugcmaker、musicmaker</span></div>
+        </div>
+      </section>
+
+      <section class="detail-section" id="context">
+        <h2 data-i18n="skill-h2-context">01. 项目背景</h2>
+        <p data-i18n="skill-context-p1">
+          这个问题最先出现在网页 SEO 文案里。aitryon.art、heydream.im、ugcmaker.org 和 musicmaker.im 都有大量生成器、模型页或工具页；每个页面都要按固定 JSON schema 写标题、描述、示例、功能、使用场景、FAQ 和 CTA。
+        </p>
+        <p data-i18n="skill-context-p2">
+          后来我发现 flaq.ai 的模型 README、cover/carousel 视觉 prompt 和日常素材整理也有类似问题，但它们不是 SEO JSON 的变体。README 要跟固定模板，视觉 prompt 要先判断图片是否好看、能不能复制，素材处理要先检查命名和冲突。放进同一个 prompt，只会互相污染。
+        </p>
+      </section>
+
+      <section class="detail-section" id="problem">
+        <h2 data-i18n="skill-h2-problem">02. 核心问题</h2>
+        <p data-i18n="skill-problem-p">
+          问题不是 AI 会不会写，而是它有没有被放进对的规则里。SEO JSON Writer 不能乱改 key 和 section 顺序；Flaq Readme 不能套网页 SEO 的结构；Flaq Visual Prompts 不能为了统一风格牺牲单张图；Asset Optimizer 不能跳过文件预检。边界一模糊，后面就全是返工。
+        </p>
+        <ul>
+          <li data-i18n="skill-problem-li-1">四个 SEO 站点需要稳定 JSON 页面文案，但每个站点都有自己的 schema 和语气。</li>
+          <li data-i18n="skill-problem-li-2">Flaq README 属于模型文档，不应该套用网页落地页的写法。</li>
+          <li data-i18n="skill-problem-li-3">Cover 和 carousel 临时写 prompt 时，可能这张好看，下一张就跑偏。</li>
+          <li data-i18n="skill-problem-li-4">图片和视频素材数量多，人工命名检查、压缩和转换很容易漏掉冲突。</li>
+        </ul>
+      </section>
+
+      <section class="detail-section" id="strategy">
+        <h2 data-i18n="skill-h2-strategy">03. 系统策略</h2>
+        <p data-i18n="skill-strategy-p">
+          我的做法很简单：按任务拆，不做万能助手。SEO JSON Writer 管网页 JSON 文案，Flaq Readme 管 flaq.ai 模型 README，Flaq Visual Prompts 管 cover 和 carousel 的视觉 prompt，Asset Optimizer 管图片和视频素材。每个 skill 只回答一件事：什么时候用，先看什么，哪些地方不能乱动，最后怎么验收。
+        </p>
+        <div class="strategy-list">
+          <div><strong data-i18n="skill-strategy-1-title">任务分流</strong><span data-i18n="skill-strategy-1-text">先判断是 SEO JSON、Flaq README、视觉 prompt，还是素材处理。</span></div>
+          <div><strong data-i18n="skill-strategy-2-title">参考锁定</strong><span data-i18n="skill-strategy-2-text">SEO 跟参考 JSON，Flaq 跟固定 README 模板，视觉 prompt 跟审美 memory，素材处理跟目录范围。</span></div>
+          <div><strong data-i18n="skill-strategy-3-title">Memory 检索</strong><span data-i18n="skill-strategy-3-text">复用历史页面摘要、已采纳 SEO 经验和视觉偏好。</span></div>
+          <div><strong data-i18n="skill-strategy-4-title">脚本校验</strong><span data-i18n="skill-strategy-4-text">用导入、索引、预检和 audit 脚本减少手动检查。</span></div>
+          <div><strong data-i18n="skill-strategy-5-title">人工审核</strong><span data-i18n="skill-strategy-5-text">我保留最终判断：事实、结构、SEO 意图和交付质量。</span></div>
+        </div>
+      </section>
+
+      <section class="detail-section" id="workflow">
+        <h2 data-i18n="skill-h2-workflow">04. 工作流设计</h2>
+        <p data-i18n="skill-workflow-p1">
+          SEO JSON Writer 是这套系统里最重要的 skill。它服务的是网页 SEO JSON 文案，主要用在 aitryon.art、heydream.im、ugcmaker.org 和 musicmaker.im。它不会自由发挥页面结构，而是先把参考 JSON 当成唯一结构来源，保留 key 名、嵌套、section 顺序、H2 模式和 CTA 字段。写作前会检索本地 memory，写完后再做 JSON 校验和 SEO 竞品 review，用来补关键词和搜索意图，但不复制竞品。
+        </p>
+        <div class="system-grid">
+          <div><strong data-i18n="skill-workflow-1-title">参考 JSON</strong><span data-i18n="skill-workflow-1-text">把参考文件作为唯一 schema 来源，不改 key 和 section 顺序。</span></div>
+          <div><strong data-i18n="skill-workflow-2-title">Memory 检索</strong><span data-i18n="skill-workflow-2-text">查找相似 slug、模型、工具页和历史 SEO 经验。</span></div>
+          <div><strong data-i18n="skill-workflow-3-title">竞品 Review</strong><span data-i18n="skill-workflow-3-text">补足搜索意图和关键词簇，但不复制竞品句子。</span></div>
+          <div><strong data-i18n="skill-workflow-4-title">JSON 校验</strong><span data-i18n="skill-workflow-4-text">检查合法 JSON、schema 漂移、产品名和站点语气。</span></div>
+        </div>
+        <p data-i18n="skill-workflow-p2">
+          Flaq Readme 是另一条完全不同的线。它只服务 flaq.ai 的模型 README 写作，flaq.ai 是类似 WaveSpeed 的 API 聚合站，所以 README 更像模型/API 文档，而不是网页落地页。这个 skill 会读取固定模板，跟随模板的 H1、H2、段落节奏和 SEO 逻辑，同时根据模型参数约束文案。
+        </p>
+        <p data-i18n="skill-workflow-p3">
+          Flaq Visual Prompts 和 flaq.ai 1.6 的关系最直接。1.6 增加了首页 carousel、模型入口和更多 cover 需求，视觉图开始变成高频交付物。这个 skill 的第一步不是统一风格，而是先让图过关：cover 要有主体和缩略图识别度，carousel 要有横向节奏、裁切安全和文字安全区。好图多了以后，再把有效经验写进 memory，慢慢收敛成更稳定的品牌风格。
+        </p>
+        <p data-i18n="skill-workflow-p4">
+          Asset Optimizer 则更偏执行：它对应本地 rename-file 工作流，用来给图片和视频素材做命名预检、冲突检查、WebP 转换和压缩。
+        </p>
+      </section>
+
+      <section class="detail-section" id="library">
+        <h2 data-i18n="skill-h2-library">05. Skill 库</h2>
+        <p data-i18n="skill-library-p">
+          这四个 skills 是并列的，不是一个大流程里的四步。SEO JSON Writer 解决网页结构稳定，Flaq Readme 解决模型文档模板，Flaq Visual Prompts 解决 cover/carousel 的审美和复用，Asset Optimizer 解决文件处理里的低级错误。
+        </p>
+        <div class="insight-grid">
+          <div><strong>SEO JSON Writer</strong><span data-i18n="skill-library-1-text">服务四个 AI 产品站点的 SEO JSON 页面，负责 schema 保真、memory 检索、竞品 review 和结构校验。</span></div>
+          <div><strong>Flaq Readme</strong><span data-i18n="skill-library-2-text">服务 flaq.ai 模型 README，读取固定模板并根据模型参数写稳定文档。</span></div>
+          <div><strong>Flaq Visual Prompts</strong><span data-i18n="skill-library-3-text">服务 flaq.ai cover 和 carousel。它是这里唯一直接跟 1.6 视觉工作有关的 skill。</span></div>
+          <div><strong>Asset Optimizer</strong><span data-i18n="skill-library-4-text">基于本地 rename-file 工作流，处理图片和视频素材的命名预检、转换和压缩。</span></div>
+        </div>
+      </section>
+
+      <section class="detail-section" id="compare">
+        <h2 data-i18n="skill-h2-compare">06. 前后对比</h2>
+        <div class="comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="cs-th-1">Dimension</th>
+                <th data-i18n="cs-th-2">Before</th>
+                <th data-i18n="cs-th-3">After</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-i18n="skill-table-1-1">SEO 页面写作</td>
+                <td data-i18n="skill-table-1-2">临时 prompt 写页面，后面再人工改 JSON 结构</td>
+                <td data-i18n="skill-table-1-3">参考 schema + memory + SEO review + JSON 校验</td>
+              </tr>
+              <tr>
+                <td data-i18n="skill-table-2-1">模型文档</td>
+                <td data-i18n="skill-table-2-2">手动对照 flaq.ai 模板写模型 README</td>
+                <td data-i18n="skill-table-2-3">固定模板 + 模型参数约束 + 稳定 README 输出</td>
+              </tr>
+              <tr>
+                <td data-i18n="skill-table-3-1">Cover / carousel 视觉</td>
+                <td data-i18n="skill-table-3-2">临时写 prompt，这张可能好看，下一张容易跑偏</td>
+                <td data-i18n="skill-table-3-3">按 cover / carousel、裁切、安全区、主体和 memory 来写</td>
+              </tr>
+              <tr>
+                <td data-i18n="skill-table-4-1">资产整理</td>
+                <td data-i18n="skill-table-4-2">手动检查命名、压缩图片视频，容易漏冲突</td>
+                <td data-i18n="skill-table-4-3">先命名预检，再按确认范围转换和压缩</td>
+              </tr>
+              <tr>
+                <td data-i18n="skill-table-5-1">任务边界</td>
+                <td data-i18n="skill-table-5-2">SEO、README、视觉 prompt、素材处理混在同一套要求里</td>
+                <td data-i18n="skill-table-5-3">按任务类型进入不同 skill，减少规则串台</td>
+              </tr>
+              <tr>
+                <td data-i18n="skill-table-6-1">人的角色</td>
+                <td data-i18n="skill-table-6-2">重复解释规则，并修正 AI 自由发挥后的偏差</td>
+                <td data-i18n="skill-table-6-3">集中审核事实、结构、审美判断和最终交付质量</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="detail-section" id="outcome">
+        <h2 data-i18n="skill-h2-outcome">07. 结果</h2>
+        <div class="detail-outcomes">
+          <div><strong data-i18n="skill-outcome-1-title">SEO 生产更稳</strong><span data-i18n="skill-outcome-1-text">四个站点的 SEO JSON 页面可以按参考 schema 生产，不再每次重讲结构。</span></div>
+          <div><strong data-i18n="skill-outcome-2-title">Flaq 文档稳定</strong><span data-i18n="skill-outcome-2-text">模型 README 能跟固定模板走，产出质量稳定，已经整合到项目 skill 中。</span></div>
+          <div><strong data-i18n="skill-outcome-3-title">视觉生产可复制</strong><span data-i18n="skill-outcome-3-text">Cover 和 carousel 先看图能不能用，再把有效经验写回 memory。</span></div>
+          <div><strong data-i18n="skill-outcome-4-title">素材处理更省心</strong><span data-i18n="skill-outcome-4-text">图片和视频素材先预检命名和冲突，再做转换压缩，减少手动漏项。</span></div>
+        </div>
+        <p data-i18n="skill-outcome-p">
+          这套 skill 的价值不在于让 AI “什么都做”，而是让它少混淆任务。SEO 页面、模型 README、cover/carousel 视觉 prompt 和素材整理各有自己的输入、规则和验收方式，AI 只在这些边界里工作。
+        </p>
+      </section>
+
+      <section class="detail-section" id="next">
+        <h2 data-i18n="skill-h2-next">08. 下一步</h2>
+        <ul>
+          <li data-i18n="skill-next-li-1">继续用 cover 和 carousel 的生成结果反推视觉 memory，先积累好图，再逐步统一 flaq.ai 的品牌视觉风格。</li>
+          <li data-i18n="skill-next-li-2">把更多 GitHub 里的现成 skills 纳入日常流程，而不是每次从零写 prompt。</li>
+          <li data-i18n="skill-next-li-3">用 humanizer 这类 skill 检查网页文案里的 AI 痕迹。</li>
+          <li data-i18n="skill-next-li-4">用 design-taste-frontend 这类 skill 辅助检查页面视觉、交互和前端实现质量。</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <nav class="case-rail" aria-label="Case study sections">
+      <a class="is-active" href="#context" data-section="context" aria-current="true"><span>01</span><strong data-i18n="cs-nav-context">Context</strong></a>
+      <a href="#problem" data-section="problem"><span>02</span><strong data-i18n="cs-nav-problem">Problem</strong></a>
+      <a href="#strategy" data-section="strategy"><span>03</span><strong data-i18n="cs-nav-strategy">Strategy</strong></a>
+      <a href="#workflow" data-section="workflow"><span>04</span><strong data-i18n="skill-nav-workflow">工作流</strong></a>
+      <a href="#library" data-section="library"><span>05</span><strong data-i18n="skill-nav-library">Skill 库</strong></a>
+      <a href="#compare" data-section="compare"><span>06</span><strong data-i18n="cs-nav-compare">Compare</strong></a>
+      <a href="#outcome" data-section="outcome"><span>07</span><strong data-i18n="cs-nav-outcome">Outcome</strong></a>
+      <a href="#next" data-section="next"><span>08</span><strong data-i18n="cs-nav-next">Next</strong></a>
+    </nav>
+    <script src="./js/script.js"></script>
+    <script src="./js/case-study.js"></script>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lin Han hui — Product Designer & PM</title>
+    <script>
+      document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=block"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="loader" id="loader" aria-label="Portfolio loading">
+      <div class="loader-mark" aria-label="Lin Han hui">
+        <span class="loader-word loader-word--base" aria-hidden="true">Lin Han hui</span>
+        <span class="loader-word loader-word--progress" aria-hidden="true">Lin Han hui</span>
+      </div>
+      <p class="loader-line">Product Designer ｜ UX/UI Designer ｜ Vibe Coder</p>
+      <p class="loader-count" id="loaderCount">00</p>
+    </div>
+
+    <main class="site-shell" id="app">
+
+      <header class="topbar" aria-label="Site navigation">
+        <a class="brand" href="#home" aria-label="Lin Han hui home">
+          <span class="brand-text">Lin Han hui</span>
+        </a>
+        <button class="nav-menu-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation">
+          <span>MENU</span>
+          <i aria-hidden="true"></i>
+        </button>
+        <nav class="nav-links" id="siteNav">
+          <a href="#works" data-nav-index="01" data-i18n="nav-works">Works</a>
+          <a href="#about" data-nav-index="02" data-i18n="nav-about">About</a>
+          <a href="./resume.html" data-nav-index="03" data-i18n="nav-resume">Resume</a>
+          <a href="#contact" data-nav-index="04" data-i18n="nav-contact">Contact</a>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="theme-label">LIGHT</span>
+          </button>
+          <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+            <span class="lang-text">中文</span>
+          </button>
+        </nav>
+      </header>
+
+      <!-- SECTION 1: Hero About -->
+      <section class="hero-about reveal-section" id="home" data-reveal="soft">
+        <p class="hero-kicker reveal-content" data-i18n="hero-kicker">PRODUCT DESIGNER & PM</p>
+        <h1 class="hero-name blind-title"><span>Lin Han hui</span></h1>
+        <p class="hero-intro reveal-content" data-i18n="about-intro-1">Designer who ships. I work across research, Figma, and code — building AI SaaS products that grow.</p>
+        <p class="hero-intro reveal-content" data-i18n="about-intro-2">Based in Guangzhou. Currently at a startup shipping AI image and video tools.</p>
+        <div class="hero-tags reveal-content">
+          <span class="hero-tag hero-tag--available" data-i18n="tag-available">● AVAILABLE FOR WORK</span>
+          <span class="hero-tag" data-i18n="tag-location">GUANGZHOU, CHINA</span>
+        </div>
+      </section>
+
+      <!-- SECTION 2: Works -->
+      <section class="work-stage work-stage--featured reveal-section" id="works" aria-label="Selected project" data-reveal="mask">
+        <div class="work-heading">
+          <p class="section-kicker reveal-content" data-i18n="section-projects">Selected Projects</p>
+          <h2 class="blind-title"><span data-i18n="work-title">Work</span></h2>
+        </div>
+        <article class="featured-case reveal-content" id="preview" aria-live="polite">
+          <div class="featured-case-copy">
+            <p id="previewMeta" class="featured-meta">2026 · AI SaaS · Product Strategy / UXUI / Growth</p>
+            <h2 id="previewTitle" class="blind-title"><span>aitryon.art Product Experience Redesign</span></h2>
+            <p id="previewText" data-i18n="featured-summary">
+              Reframed AI try-on into an image and video creation platform, linking generation entry, SEO structure, and measurable growth.
+            </p>
+            <div class="featured-metrics" aria-label="Featured case results">
+              <span><strong>+83.3%</strong><small data-i18n="featured-metric-1">visit duration</small></span>
+              <span><strong>+40%</strong><small data-i18n="featured-metric-2">subscription conversion</small></span>
+              <span><strong>2.4x</strong><small data-i18n="featured-metric-3">monthly net profit</small></span>
+            </div>
+            <div class="featured-focus-list" aria-label="Case study focus areas">
+              <span data-i18n="featured-focus-1">Product Narrative</span>
+              <span data-i18n="featured-focus-2">Generation Entry</span>
+              <span data-i18n="featured-focus-3">SEO Path</span>
+              <span data-i18n="featured-focus-4">Studio Next</span>
+            </div>
+          </div>
+          <a class="preview-media featured-cover" id="previewLink" href="./case-study-aitryon.html" aria-label="View aitryon.art Product Experience Redesign case study">
+            <img id="previewImage" src="./assets/cases/aitryon/aitryon-featured-cover.png" alt="aitryon.art redesign featured cover" />
+            <span class="preview-cta" data-i18n="preview-cta">View full case study ↗</span>
+          </a>
+        </article>
+
+        <article class="featured-case reveal-content">
+          <div class="featured-case-copy">
+            <p class="featured-meta" data-i18n="skill-card-meta">2026 · AI 工作流 · 产品运营 / SEO / 自动化</p>
+            <h2 class="blind-title featured-title--dense-zh"><span data-i18n="skill-card-title">四个本地 AI skills，处理四类重复生产任务</span></h2>
+            <p data-i18n="skill-card-summary">
+              把 SEO JSON 文案、Flaq README、cover/carousel 提示词和素材整理拆开，每类任务用自己的规则。
+            </p>
+            <div class="featured-metrics" aria-label="Featured case results">
+              <span><strong>4</strong><small data-i18n="skill-card-metric-1">生产型 skills</small></span>
+              <span><strong>156</strong><small data-i18n="skill-card-metric-2">memory 索引页面</small></span>
+              <span><strong>5</strong><small data-i18n="skill-card-metric-3">工作流层级</small></span>
+            </div>
+            <div class="featured-focus-list" aria-label="Case study focus areas">
+              <span data-i18n="skill-card-focus-1">Skill 设计</span>
+              <span data-i18n="skill-card-focus-2">内容运营</span>
+              <span data-i18n="skill-card-focus-3">本地记忆</span>
+              <span data-i18n="skill-card-focus-4">校验机制</span>
+            </div>
+          </div>
+          <a class="preview-media featured-cover" href="./case-study-ai-skill-system.html" aria-label="View AI Skill System case study">
+            <img src="./assets/cases/ai-skill-system/ai-skill-system-cover-v3.png" alt="AI skill system case study cover" />
+            <span class="preview-cta" data-i18n="preview-cta">View full case study ↗</span>
+          </a>
+        </article>
+
+        <article class="featured-case reveal-content">
+          <div class="featured-case-copy">
+            <p class="featured-meta" data-i18n="portfolio-card-meta">2026 · 作品集 · 产品定位 / UXUI / Memory System</p>
+            <h2 class="blind-title featured-title--dense-zh"><span data-i18n="portfolio-card-title">把作品集网站设计成一个持续生长的产品系统</span></h2>
+            <p data-i18n="portfolio-card-summary">
+              将这个作品集设计成一个持续生长的产品叙事：包含暗色 editorial 界面、可复用案例结构、双语文案层和持续记忆系统。
+            </p>
+            <div class="featured-metrics" aria-label="Featured case results">
+              <span><strong>3</strong><small data-i18n="portfolio-card-metric-1">核心页面</small></span>
+              <span><strong>8</strong><small data-i18n="portfolio-card-metric-2">案例结构段落</small></span>
+              <span><strong>5</strong><small data-i18n="portfolio-card-metric-3">memory 文件</small></span>
+            </div>
+            <div class="featured-focus-list" aria-label="Case study focus areas">
+              <span data-i18n="portfolio-card-focus-1">定位</span>
+              <span data-i18n="portfolio-card-focus-2">视觉系统</span>
+              <span data-i18n="portfolio-card-focus-3">案例结构</span>
+              <span data-i18n="portfolio-card-focus-4">记忆系统</span>
+            </div>
+          </div>
+          <a class="preview-media featured-cover" href="./case-study-portfolio-system.html" aria-label="View Portfolio System Design case study">
+            <img src="./assets/cases/portfolio-system/portfolio-system-cover-v3.png" alt="Portfolio system design case study cover" />
+            <span class="preview-cta" data-i18n="preview-cta">View full case study ↗</span>
+          </a>
+        </article>
+      </section>
+
+      <!-- SECTION 3: About Me -->
+      <section class="about-panel reveal-section" id="about" data-reveal="lift">
+        <p class="section-kicker reveal-content" data-i18n="about-kicker">My Story</p>
+        <h2 class="blind-title"><span data-i18n="about-title">About</span></h2>
+        <div class="about-content reveal-content">
+          <div class="about-copy">
+            <p><span class="about-lead" data-i18n="about-story-1-lead">I work where product, design, and growth meet.</span> <span data-i18n="about-story-1-rest">My background started in industrial design and UI, then moved into C-end AI SaaS products, where I now handle product planning, UX/UI, SEO content, testing, and data review.</span></p>
+            <p><span class="about-lead" data-i18n="about-story-2-lead">I like turning vague AI capabilities into usable workflows.</span> <span data-i18n="about-story-2-rest">From research and competitor mapping to Figma, copy, handoff, and low-code collaboration, I care about whether the idea can actually ship.</span></p>
+            <p><span class="about-lead" data-i18n="about-story-3-lead">My current focus is AI and growth.</span> <span data-i18n="about-story-3-rest">I have worked on AI image, virtual try-on, 3D, video, and music creation products, using content systems and product iteration to connect traffic with conversion.</span></p>
+            <a class="about-resume" href="./resume.html" data-i18n="about-resume">查看全部履历 ↗</a>
+          </div>
+          <aside class="about-timeline" aria-label="Experience">
+            <p class="about-timeline-kicker" data-i18n="about-experience">Experience</p>
+            <div class="about-role">
+              <div>
+                <strong data-i18n="about-role-1-company">Guangzhou 6677 Technology</strong>
+                <span data-i18n="about-role-1-title">Product Manager · AI SaaS</span>
+              </div>
+              <time>2025 - Now</time>
+            </div>
+            <div class="about-role">
+              <div>
+                <strong>SIANEXX PTE. LTD</strong>
+                <span data-i18n="about-role-2-title">UI Designer</span>
+              </div>
+              <time>2024 - 2025</time>
+            </div>
+            <div class="about-role">
+              <div>
+                <strong data-i18n="about-role-3-company">Jiangsu Lidu Technology</strong>
+                <span data-i18n="about-role-3-title">UI Designer</span>
+              </div>
+              <time>2024</time>
+            </div>
+            <div class="about-role">
+              <div>
+                <strong data-i18n="about-role-4-company">Nanjing Institute of Technology Design Studio</strong>
+                <span data-i18n="about-role-4-title">Intern Designer</span>
+              </div>
+              <time>2022 - 2023</time>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- SECTION 4: Contact Footer -->
+      <section class="contact-footer reveal-section" id="contact" data-reveal="lift">
+        <p class="contact-kicker reveal-content" data-i18n="contact-kicker">GET IN TOUCH</p>
+        <a class="contact-headline blind-title" href="mailto:15895838711@163.com">
+          <span class="title-mask">
+            <span class="contact-line1" data-i18n="contact-line-1">Say hi!</span>
+          </span>
+          <span class="title-mask contact-title-secondary">
+            <span class="contact-line2" data-i18n="contact-line-2">Let's talk ↗</span>
+          </span>
+        </a>
+        <div class="contact-bottom reveal-content">
+          <div class="contact-info">
+            <p>15895838711@163.com</p>
+            <p data-i18n="contact-location">Guangzhou, China</p>
+          </div>
+          <p class="contact-copy" data-i18n="contact-copy">© 2026 Lin Han hui · Product Designer & PM</p>
+        </div>
+      </section>
+
+    </main>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

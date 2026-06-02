@@ -1,0 +1,85 @@
+<svg width="1262" height="1262" viewBox="0 0 1262 1262" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>LIN DESIGN traced-style editable SVG</title>
+  <desc>Higher-detail editable reconstruction. Uses grouped path pieces to preserve the racing-logo bevel feel.</desc>
+  <defs>
+    <radialGradient id="previewBg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(631 631) rotate(90) scale(620)">
+      <stop stop-color="#1a1c20"/>
+      <stop offset="1" stop-color="#101113"/>
+    </radialGradient>
+    <linearGradient id="face" x1="130" y1="575" x2="1132" y2="678" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset=".45" stop-color="#f2f2f2"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <style>
+      .face { fill: url(#face); }
+      .bevel { fill: #d8dadd; opacity: .55; }
+      .cut { fill: #101113; }
+      .accent { fill: #baff00; }
+    </style>
+  </defs>
+
+  <g id="optional-preview-background">
+    <rect width="1262" height="1262" fill="url(#previewBg)"/>
+  </g>
+
+  <g id="wordmark-high-detail">
+    <g id="letter-L">
+      <path class="face" d="M192 574H220L180 649L253 648L235 678H126L142 667L161 633L192 574Z"/>
+      <path class="bevel" d="M126 678L142 667L180 649L253 648L235 678H126Z"/>
+      <path class="cut" opacity=".12" d="M161 633L142 667L179 649Z"/>
+    </g>
+
+    <g id="letter-I-left">
+      <path class="face" d="M304 574H331L317 598L277 678H250L304 574Z"/>
+      <path class="bevel" d="M250 678L277 678L289 654L263 666Z"/>
+    </g>
+
+    <g id="letter-N-left">
+      <path class="face" d="M346 574H378L405 637L432 574H459L416 678H386L359 616L333 678H311L346 574Z"/>
+      <path class="bevel" d="M311 678H333L359 616L386 678H416L405 637L386 651L362 598L346 574Z"/>
+    </g>
+
+    <g id="letter-D">
+      <path class="face" d="M512 574H612C625 574 633 578 636 586C639 594 636 604 629 616L609 653C599 671 585 678 568 678H458L512 574ZM528 598L505 653H570C578 653 584 649 588 642L604 613C609 603 605 598 593 598H528Z" fill-rule="evenodd"/>
+      <path class="bevel" d="M458 678L505 653H570C578 653 584 649 588 642L568 678H458Z"/>
+      <path class="bevel" d="M512 574H612C625 574 633 578 636 586L526 586L512 574Z"/>
+    </g>
+
+    <g id="letter-E">
+      <path class="face" d="M650 574H753L740 599H665L657 614H728L715 639H642L636 653H719L705 678H596L650 574Z"/>
+      <path class="bevel" d="M596 678L636 653H719L705 678H596Z"/>
+      <path class="bevel" d="M657 614H728L715 639H642L657 614Z"/>
+      <path class="bevel" d="M650 574H753L740 599H665L650 574Z"/>
+    </g>
+
+    <g id="letter-S">
+      <path class="face" d="M793 574H876L863 599H784C778 599 774 601 771 606C769 611 772 613 779 613H837C850 613 858 617 861 624C864 632 860 642 852 654L849 660C841 673 829 678 815 678H712L725 653H821C830 653 835 650 838 645C841 640 838 637 830 637H774C761 637 753 633 750 626C747 619 750 610 758 598L761 593C769 581 780 574 793 574Z"/>
+      <path class="bevel" d="M712 678L725 653H821C830 653 835 650 838 645L815 678H712Z"/>
+      <path class="bevel" d="M793 574H876L863 599H784C778 599 774 601 771 606L761 593C769 581 780 574 793 574Z"/>
+      <path class="bevel" d="M774 637H830C838 637 841 640 838 645L852 654C860 642 864 632 861 624H774C761 637 761 637 774 637Z"/>
+    </g>
+
+    <g id="letter-I-right">
+      <path class="face" d="M887 574H915L861 678H833L887 574Z"/>
+      <path class="bevel" d="M833 678H861L873 655L846 666Z"/>
+    </g>
+
+    <g id="letter-G">
+      <path class="face" d="M925 574H1028L1015 599H929C921 599 915 603 911 610L895 640C890 649 893 653 903 653H964L972 637H928L940 614H1015L979 678H878C866 678 859 674 856 667C853 660 856 650 864 637L886 598C895 581 908 574 925 574Z"/>
+      <path class="bevel" d="M878 678C866 678 859 674 856 667L903 653H964L979 678H878Z"/>
+      <path class="bevel" d="M940 614H1015L1003 637H928L940 614Z"/>
+      <path class="bevel" d="M925 574H1028L1015 599H929C921 599 915 603 911 610L886 598C895 581 908 574 925 574Z"/>
+    </g>
+
+    <g id="letter-N-right">
+      <path class="face" d="M1019 574H1051L1078 637L1105 574H1133L1089 678H1059L1031 616L1006 678H983L1019 574Z"/>
+      <path class="bevel" d="M983 678H1006L1031 616L1059 678H1089L1078 637L1060 650L1035 598L1019 574Z"/>
+    </g>
+
+    <g id="green-accent">
+      <path class="accent" d="M303 574H331L316 598L287 604L303 574Z"/>
+    </g>
+  </g>
+</svg>
+
