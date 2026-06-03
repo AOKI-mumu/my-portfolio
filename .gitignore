@@ -1,0 +1,14 @@
+.DS_Store
+
+# Local notes, drafts, process files, and rollback snapshots.
+memory/
+working/
+backups/
+drafts/
+tools/
+
+# Local build/output folders.
+dist/
+
+# Local style snapshots.
+css/styles.before-cover-hover.css
