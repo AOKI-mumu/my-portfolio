@@ -42,11 +42,11 @@ const translations = {
     'about-role-4-title': 'Intern Designer',
     'contact-kicker': 'GET IN TOUCH',
     'contact-line-1': 'Say hi!',
-    'contact-line-2': "Let's talk ↗",
+    'contact-line-2': "Let's talk",
     'contact-location': 'Guangzhou, China',
     'contact-copy': '© 2026 Lin Han hui · Product Designer & PM',
     // Case study
-    'cs-back': '← Back to works',
+    'cs-back': 'Back to works',
     'cs-title': 'From AI Try-On tool to AI image & video creation platform: aitryon.art product experience redesign',
     'cs-intro': 'aitryon.art had outgrown its original try-on positioning. I reframed it as an AI image and video creation platform, redesigned the homepage generation entry, and connected that entry with tool pages, model pages, and the post-login flow. After launch, visit duration rose 83.3%, subscription conversion rose 40%, and monthly net profit was about 2.4x higher.',
     'cs-meta-role-label': 'Role',
@@ -194,11 +194,11 @@ const translations = {
     'about-role-4-title': '实习设计师',
     'contact-kicker': '联系我',
     'contact-line-1': 'Say hi!',
-    'contact-line-2': "Let's talk ↗",
+    'contact-line-2': "Let's talk",
     'contact-location': '中国 · 广州',
     'contact-copy': '© 2026 Lin Han hui · 产品设计师 & PM',
     // Case study
-    'cs-back': '← 返回作品',
+    'cs-back': '返回作品',
     'cs-title': '从 AI Try-On 工具到 AI 图像视频创作平台：aitryon.art 产品体验重构',
     'cs-intro': 'aitryon.art 已经不再适合原来的 AI 试穿定位。我把它重新定义为 AI 图像与视频创作平台，重做首页生成入口，并把这个入口和工具页、模型页、登录后的生成流程接起来。上线后，访问时长提升 83.3%，订阅转化提升 40%，月净利润约提升 2.4 倍。',
     'cs-meta-role-label': '角色',
@@ -312,9 +312,9 @@ const translations = {
 
 Object.assign(translations.en, {
   'nav-resume': 'Resume',
-  'about-resume': 'View full resume ↗',
+  'about-resume': 'View full resume',
   'work-title': 'Work',
-  'resume-back': '← Back to home',
+  'resume-back': 'Back to home',
   'resume-title': 'Resume',
   'resume-intro': 'Lin Han hui is an AI SaaS product manager with a design background. He has worked on 0-1 product builds, SEO growth, page redesigns, release testing, low-code work, and frontend collaboration.',
   'resume-edu': 'Nanjing Institute of Technology · Bachelor',
@@ -370,9 +370,9 @@ Object.assign(translations.en, {
 
 Object.assign(translations.zh, {
   'nav-resume': '简历',
-  'about-resume': '查看全部履历 ↗',
+  'about-resume': '查看全部履历',
   'work-title': 'Work',
-  'resume-back': '← 返回主页',
+  'resume-back': '返回主页',
   'resume-title': '简历',
   'resume-intro': '林瀚辉，AI SaaS 产品经理，设计背景转产品。做过 0-1 产品搭建、SEO 增长、页面改版和版本验收，也能参与低代码与前端协作，把需求从想法推进到上线。',
   'resume-edu': '南京工程学院 · 本科',
@@ -909,7 +909,7 @@ const projects = [
     type: "AI SaaS · Product Strategy / UXUI / Growth",
     typeZh: "AI SaaS · 产品策略 / UXUI / 增长",
     detailUrl: "./case-study-aitryon.html",
-    image: "./assets/cases/aitryon/aitryon-featured-cover.png",
+    image: "./assets/cases/aitryon/aitryon-macbook-cover.webp",
     summary: "AI SaaS product experience reframed from a vertical try-on tool into a broader image and video creation platform.",
     summaryZh: "将垂直试穿工具重构为更完整的 AI 图像与视频创作平台。"
   }
