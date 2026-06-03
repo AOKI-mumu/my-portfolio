@@ -1178,6 +1178,35 @@ function initScrollReveal() {
   window.addEventListener('resize', requestUpdate);
 }
 
+function initWorkCaseReveal() {
+  const workCases = Array.from(document.querySelectorAll('.work-stage .featured-case'));
+  if (!workCases.length) return;
+
+  const showCase = caseCard => {
+    caseCard.classList.add('is-case-visible');
+  };
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion || !('IntersectionObserver' in window)) {
+    workCases.forEach(showCase);
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, caseObserver) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      showCase(entry.target);
+      caseObserver.unobserve(entry.target);
+    });
+  }, {
+    root: null,
+    rootMargin: '0px 0px -18% 0px',
+    threshold: 0.18
+  });
+
+  workCases.forEach(caseCard => observer.observe(caseCard));
+}
+
 // ─── Loader (only on index page) ───────────────────────────────────────────
 if (isIndexPage) {
   const timer = window.setInterval(() => {
@@ -1193,6 +1222,7 @@ if (isIndexPage) {
         const hero = document.querySelector('.hero-about');
         if (hero) hero.classList.add('is-visible');
         initScrollReveal();
+        initWorkCaseReveal();
       }, 700);
     }
   }, 55);

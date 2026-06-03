@@ -14,10 +14,13 @@
   --max: 1680px;
   --detail: 1180px;
   --detail-media: 1440px;
-  --reading: 860px;
+  --reading: 820px;
   --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
   --font-title: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-copy: "Urbanist", "Inter", "IBM Plex Sans", "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --copy: color-mix(in srgb, var(--white) 78%, transparent);
+  --copy-muted: color-mix(in srgb, var(--white) 70%, transparent);
 }
 
 [data-theme="light"] {
@@ -33,6 +36,8 @@
   --accent-line: rgba(98, 116, 0, 0.28);
   --nav-bg: rgba(245, 243, 239, 0.68);
   --nav-line: rgba(20, 20, 20, 0.08);
+  --copy: color-mix(in srgb, var(--white) 76%, transparent);
+  --copy-muted: color-mix(in srgb, var(--white) 68%, transparent);
 }
 
 * {
@@ -488,9 +493,11 @@ button {
 .hero-intro {
   max-width: 640px;
   margin: 0;
-  color: var(--soft);
-  font-size: clamp(16px, 1.15vw, 19px);
-  line-height: 1.6;
+  color: var(--copy);
+  font-family: var(--font-copy);
+  font-size: clamp(18px, 1.18vw, 21px);
+  font-weight: 400;
+  line-height: 1.66;
 }
 
 .hero-intro + .hero-intro {
@@ -513,7 +520,10 @@ button {
   padding: 6px 14px;
   border: 1px solid var(--line);
   border-radius: 999px;
+  font-family: var(--font-body);
   font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
   letter-spacing: 0.12em;
   color: var(--soft);
   text-transform: uppercase;
@@ -566,6 +576,7 @@ button {
 .section-kicker {
   margin: 0 0 26px;
   color: var(--white);
+  font-family: var(--font-body);
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.18em;
@@ -584,7 +595,7 @@ button {
 }
 
 .featured-case + .featured-case {
-  margin-top: clamp(52px, 7vw, 108px);
+  margin-top: clamp(76px, 9vw, 144px);
 }
 
 .featured-case-copy {
@@ -613,6 +624,77 @@ button {
 
 .featured-cover {
   align-self: center;
+}
+
+.work-stage .featured-case.reveal-content {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+.featured-case .featured-case-copy > *,
+.featured-case .featured-cover {
+  opacity: 0;
+  will-change: opacity, transform, clip-path;
+}
+
+.featured-case .featured-case-copy > * {
+  transform: translate3d(0, 14px, 0);
+  transition:
+    opacity 360ms ease,
+    transform 460ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.featured-case .featured-cover {
+  clip-path: inset(0 100% 0 0);
+  transform: translate3d(0, 12px, 0);
+  transition:
+    opacity 420ms ease,
+    clip-path 640ms cubic-bezier(0.76, 0, 0.24, 1),
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-section.is-visible .featured-case .blind-title > span {
+  animation: none;
+  transform: translate3d(0, -108%, 0);
+}
+
+.reveal-section.is-visible .featured-case.is-case-visible .blind-title > span {
+  animation: blind-title-down 620ms cubic-bezier(0.76, 0, 0.24, 1) 60ms both;
+}
+
+.featured-case.is-case-visible .featured-case-copy > *,
+.featured-case.is-case-visible .featured-cover {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.featured-case.is-case-visible .featured-cover {
+  clip-path: inset(0);
+}
+
+.featured-case.is-case-visible .featured-meta {
+  transition-delay: 20ms;
+}
+
+.featured-case.is-case-visible .featured-case-copy h2 {
+  transition-delay: 80ms;
+}
+
+.featured-case.is-case-visible .featured-case-copy p:not(.featured-meta) {
+  transition-delay: 150ms;
+}
+
+.featured-case.is-case-visible .featured-cover {
+  transition-delay: 90ms;
+}
+
+.featured-case.is-case-visible .featured-metrics {
+  transition-delay: 220ms;
+}
+
+.featured-case.is-case-visible .featured-focus-list {
+  transition-delay: 300ms;
 }
 
 [data-theme="light"] .preview-media {
@@ -742,6 +824,7 @@ button {
 .featured-meta,
 #previewMeta {
   max-width: 520px;
+  font-family: var(--font-body);
   font-size: 12px;
   font-weight: 500;
   line-height: 1.35;
@@ -773,13 +856,14 @@ button {
   margin-top: 24px;
 }
 
-.featured-case-copy #previewText {
+.featured-case-copy > p:not(.featured-meta) {
   max-width: 520px;
   margin-top: 32px;
-  color: color-mix(in srgb, var(--white) 68%, transparent);
-  font-size: 16px;
+  color: var(--copy-muted);
+  font-family: var(--font-copy);
+  font-size: clamp(17px, 1.02vw, 19px);
   font-weight: 400;
-  line-height: 1.62;
+  line-height: 1.68;
 }
 
 .featured-metrics {
@@ -819,11 +903,12 @@ button {
   display: inline;
   margin-top: 0;
   color: color-mix(in srgb, var(--white) 56%, transparent);
-  font-size: 14px;
-  font-weight: 400;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
   line-height: 1.35;
+  letter-spacing: 0.02em;
   text-transform: none;
-  letter-spacing: 0;
 }
 
 .featured-focus-list {
@@ -836,9 +921,10 @@ button {
 
 .featured-focus-list span {
   margin: 0;
+  font-family: var(--font-body);
   font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
 }
 
 .featured-focus-list span {
@@ -895,10 +981,12 @@ button {
 
 .about-copy p {
   margin: 0;
-  color: var(--muted);
+  color: var(--copy-muted);
+  font-family: var(--font-copy);
   font-size: clamp(22px, 2vw, 34px);
-  line-height: 1.42;
-  letter-spacing: -0.015em;
+  font-weight: 400;
+  line-height: 1.46;
+  letter-spacing: 0;
 }
 
 .about-copy p + p {
@@ -1348,10 +1436,11 @@ button {
 .detail-intro {
   max-width: var(--detail);
   margin: 22px 0 0;
-  color: color-mix(in srgb, var(--white) 72%, transparent);
-  font-size: clamp(16px, 1.08vw, 18px);
+  color: var(--copy);
+  font-family: var(--font-copy);
+  font-size: clamp(18px, 1.18vw, 21px);
   font-weight: 400;
-  line-height: 1.68;
+  line-height: 1.66;
   overflow-wrap: anywhere;
 }
 
@@ -1385,7 +1474,7 @@ button {
 .detail-section li,
 .detail-wide-image figcaption,
 .detail-outcomes span {
-  color: color-mix(in srgb, var(--white) 70%, transparent);
+  color: var(--copy-muted);
   overflow-wrap: anywhere;
 }
 
@@ -1425,22 +1514,29 @@ button {
 .detail-section > p {
   max-width: var(--reading);
   margin: 0;
-  font-size: clamp(16px, 1vw, 17px);
+  color: var(--copy);
+  font-family: var(--font-copy);
+  font-size: clamp(18px, 1.08vw, 20px);
   font-weight: 400;
-  line-height: 1.74;
+  line-height: 1.68;
 }
 
 .detail-section > p + p {
-  margin-top: 14px;
+  margin-top: 18px;
 }
 
 .detail-section > ul {
   max-width: var(--reading);
-  margin: 0;
-  padding-left: 20px;
-  font-size: clamp(16px, 1vw, 17px);
+  margin: 2px 0 0;
+  padding-left: 22px;
+  font-family: var(--font-copy);
+  font-size: clamp(17px, 1.02vw, 19px);
   font-weight: 400;
-  line-height: 1.72;
+  line-height: 1.68;
+}
+
+.detail-section > ul li + li {
+  margin-top: 8px;
 }
 
 .insight-grid,
@@ -1779,9 +1875,9 @@ html[lang="zh"] .detail-section > p,
 html[lang="zh"] .detail-section > ul,
 html[lang="zh"] .detail-section li,
 html[lang="zh"] .detail-outcomes span,
-html[lang="zh"] .featured-case-copy #previewText,
+html[lang="zh"] .featured-case-copy > p:not(.featured-meta),
 html[lang="zh"] .about-copy p {
-  line-height: 1.86;
+  line-height: 1.82;
 }
 
 html[lang="zh"] .featured-focus-list span + span::before {
@@ -2122,6 +2218,19 @@ html[lang="zh"] .featured-focus-list span + span::before {
   .preview {
     grid-template-columns: 1fr;
     gap: 36px;
+  }
+
+  .featured-case + .featured-case {
+    margin-top: clamp(88px, 14vw, 132px);
+  }
+
+  .featured-case .featured-case-copy > *,
+  .featured-case .featured-cover {
+    transform: translate3d(0, 12px, 0);
+  }
+
+  .featured-case .featured-cover {
+    transform: translate3d(0, 12px, 0);
   }
 
   .work-heading {
@@ -2622,6 +2731,21 @@ html[lang="zh"] .featured-focus-list span + span::before {
 
   .floating-case-nav .floating-primary {
     min-width: 72px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-case .featured-case-copy > *,
+  .featured-case .featured-cover {
+    opacity: 1;
+    clip-path: inset(0);
+    transform: none;
+    transition: none;
+  }
+
+  .reveal-section.is-visible .featured-case .blind-title > span {
+    animation: none;
+    transform: none;
   }
 }
 
