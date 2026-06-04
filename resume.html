@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&family=Urbanist:wght@400;500;600;700&display=block"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&family=Urbanist:wght@400;500;600;700&display=block"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/styles.css" />
@@ -48,8 +48,8 @@
         <div class="resume-contact">
           <span data-i18n="resume-edu">南京工程学院 · 本科</span>
           <a href="mailto:15895838711@163.com">15895838711@163.com</a>
-          <span>WeChat: l15895838711</span>
-          <span>Guangzhou, China</span>
+          <span data-i18n="resume-wechat">WeChat: l15895838711</span>
+          <span data-i18n="resume-location">Guangzhou, China</span>
         </div>
       </section>
 
@@ -66,7 +66,7 @@
           <article class="resume-item">
             <header>
               <h3 data-i18n="resume-exp-1-title">广州六六柒柒科技有限公司｜产品经理</h3>
-              <time>2025.05 - Now</time>
+              <time data-i18n="resume-exp-1-time">2025.05 - Now</time>
             </header>
             <p data-i18n="resume-exp-1-desc">面向海外用户的 C 端 AI SaaS 产品，覆盖 AI 图像生成、虚拟试衣、3D 生成和 AI 视频等场景。</p>
             <ul>
@@ -121,7 +121,7 @@
           <article class="resume-item">
             <header>
               <h3 data-i18n="resume-project-1-title">aitryon.art｜产品经理（增长与体验优化）</h3>
-              <time>AI Try-On / Image / Video</time>
+              <time data-i18n="resume-project-1-type">AI Try-On / Image / Video</time>
             </header>
             <ul>
               <li data-i18n="resume-project-1-li-1">基于关键词和竞品页面，提出 SEO 页面矩阵和站内结构优化方案。</li>
@@ -134,7 +134,7 @@
           <article class="resume-item">
             <header>
               <h3 data-i18n="resume-project-2-title">flaq.ai｜AI 模型/API 平台内容与免费工具引流</h3>
-              <time>AI API / Docs / Free Tools</time>
+              <time data-i18n="resume-project-2-type">AI API / Docs / Free Tools</time>
             </header>
             <ul>
               <li data-i18n="resume-project-2-li-1">区分开发者查 API 和创作者试模型两类入口，梳理模型页、文档页和免费生成工具页的承接关系。</li>
@@ -147,7 +147,7 @@
           <article class="resume-item">
             <header>
               <h3 data-i18n="resume-project-3-title">heydream.im｜AI 图像 / 视频 / 3D 工具矩阵</h3>
-              <time>Image / Video / 3D</time>
+              <time data-i18n="resume-project-3-type">Image / Video / 3D</time>
             </header>
             <ul>
               <li data-i18n="resume-project-3-li-1">梳理 AI 图像、视频、3D 和免费工具的产品地图，确定功能页、模型页和工具页的上线优先级。</li>
@@ -160,7 +160,7 @@
           <article class="resume-item">
             <header>
               <h3 data-i18n="resume-project-4-title">musicmaker.im｜AI 音乐产品与音频工具矩阵</h3>
-              <time>AI Music</time>
+              <time data-i18n="resume-project-4-type">AI Music</time>
             </header>
             <ul>
               <li data-i18n="resume-project-4-li-1">参与 AI 音乐产品立项，协助梳理 MVP 范围、版本节奏、核心功能优先级和页面上线顺序。</li>
@@ -173,7 +173,7 @@
           <article class="resume-item">
             <header>
               <h3 data-i18n="resume-project-5-title">ugcmaker.org｜UGC 广告生成工具矩阵</h3>
-              <time>UGC Ads / Image / Video</time>
+              <time data-i18n="resume-project-5-type">UGC Ads / Image / Video</time>
             </header>
             <ul>
               <li data-i18n="resume-project-5-li-1">围绕 UGC 广告、TikTok 视频、商品图和 Pinterest Pin 等营销场景，拆分工具页定位和产品入口。</li>
@@ -187,23 +187,60 @@
 
       <section class="detail-section">
         <h2 data-i18n="resume-skills-title">Skills</h2>
-        <div class="resume-tags">
-          <span>需求分析</span>
-          <span>信息架构</span>
-          <span>交互设计</span>
-          <span>高保真设计</span>
-          <span>版本测试</span>
-          <span>数据复盘</span>
-          <span>SEO 内容系统</span>
-          <span>多语言 SEO</span>
-          <span>内容结构化</span>
-          <span>前端协同</span>
-          <span>低代码调整</span>
-          <span>Figma</span>
-          <span>Claude Code</span>
-          <span>Codex</span>
-          <span>Cursor</span>
-          <span>英语六级</span>
+        <div class="resume-skill-matrix">
+          <div class="resume-skill-row">
+            <h3 data-i18n="resume-skill-group-1">Product & UX</h3>
+            <div class="resume-tags">
+              <span data-i18n="resume-skill-1">需求分析</span>
+              <span data-i18n="resume-skill-2">信息架构</span>
+              <span data-i18n="resume-skill-3">交互设计</span>
+              <span data-i18n="resume-skill-4">高保真设计</span>
+            </div>
+          </div>
+          <div class="resume-skill-row">
+            <h3 data-i18n="resume-skill-group-2">Growth & SEO</h3>
+            <div class="resume-tags">
+              <span data-i18n="resume-skill-6">数据复盘</span>
+              <span data-i18n="resume-skill-7">SEO 内容系统</span>
+              <span data-i18n="resume-skill-8">多语言 SEO</span>
+              <span data-i18n="resume-skill-9">内容结构化</span>
+            </div>
+          </div>
+          <div class="resume-skill-row">
+            <h3 data-i18n="resume-skill-group-3">Delivery</h3>
+            <div class="resume-tags">
+              <span data-i18n="resume-skill-5">版本测试</span>
+              <span data-i18n="resume-skill-10">前端协同</span>
+              <span data-i18n="resume-skill-11">低代码调整</span>
+            </div>
+          </div>
+          <div class="resume-skill-row">
+            <h3 data-i18n="resume-skill-group-4">Tools</h3>
+            <div class="resume-tags">
+              <span class="resume-tag--tool">
+                <img src="./assets/brand/figma.svg" alt="" aria-hidden="true" />
+                <span class="resume-tool-label" data-i18n="resume-skill-12">Figma</span>
+              </span>
+              <span class="resume-tag--tool">
+                <img src="./assets/brand/anthropic.svg" alt="" aria-hidden="true" />
+                <span class="resume-tool-label" data-i18n="resume-skill-13">Claude Code</span>
+              </span>
+              <span class="resume-tag--tool">
+                <img src="./assets/brand/openai.svg" alt="" aria-hidden="true" />
+                <span class="resume-tool-label" data-i18n="resume-skill-14">Codex</span>
+              </span>
+              <span class="resume-tag--tool">
+                <img src="./assets/brand/cursor.svg" alt="" aria-hidden="true" />
+                <span class="resume-tool-label" data-i18n="resume-skill-15">Cursor</span>
+              </span>
+            </div>
+          </div>
+          <div class="resume-skill-row">
+            <h3 data-i18n="resume-skill-group-5">Language</h3>
+            <div class="resume-tags">
+              <span data-i18n="resume-skill-16">CET-6 English</span>
+            </div>
+          </div>
         </div>
       </section>
     </main>

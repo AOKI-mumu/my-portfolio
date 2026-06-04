@@ -17,8 +17,8 @@
   --reading: 820px;
   --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
   --font-title: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-copy: "Urbanist", "Inter", "IBM Plex Sans", "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Urbanist", "Inter", "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-copy: "Urbanist", "Inter", "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --copy: color-mix(in srgb, var(--white) 78%, transparent);
   --copy-muted: color-mix(in srgb, var(--white) 70%, transparent);
 }
@@ -366,7 +366,7 @@ button {
 .nav-links a::before {
   content: attr(data-nav-index);
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.04em;
   transition: color 180ms ease;
 }
@@ -521,7 +521,7 @@ button {
   border: 1px solid var(--line);
   border-radius: 999px;
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0.12em;
@@ -1393,7 +1393,7 @@ button {
   border: 1px solid var(--accent-line);
   border-radius: 999px;
   color: var(--accent);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1614,7 +1614,7 @@ button {
   display: block;
   margin-bottom: 14px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   line-height: 1;
@@ -2025,7 +2025,7 @@ html[lang="zh"] .featured-focus-list span + span::before {
   align-items: center;
   min-height: 28px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   transition: color 180ms ease, transform 180ms ease;
@@ -2150,23 +2150,92 @@ html[lang="zh"] .featured-focus-list span + span::before {
   line-height: 1.62;
 }
 
-.resume-tags {
+.resume-skill-matrix {
   grid-column: 2;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  gap: 22px;
   max-width: var(--reading);
 }
 
-.resume-tags span {
+.resume-skill-row {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.28fr) minmax(0, 1fr);
+  gap: clamp(22px, 3vw, 42px);
+  align-items: start;
+  padding: 0;
+}
+
+.resume-skill-row h3 {
+  margin: 3px 0 0;
+  color: color-mix(in srgb, var(--white) 50%, transparent);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.resume-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 0;
+}
+
+.resume-tags > span {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  min-height: 34px;
-  padding: 0 0 6px;
-  border-bottom: 1px solid var(--line);
+  min-height: 22px;
+  padding: 0;
+  border-bottom: 0;
   border-radius: 0;
   color: var(--soft);
   font-size: 13px;
+  line-height: 1.2;
+}
+
+.resume-tags > span + span {
+  margin-left: 18px;
+}
+
+.resume-tags > span + span::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  margin-right: 18px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--white) 30%, transparent);
+}
+
+.resume-tags > .resume-tag--tool {
+  gap: 8px;
+  color: color-mix(in srgb, var(--white) 78%, transparent);
+}
+
+.resume-tags > .resume-tag--tool + .resume-tag--tool {
+  margin-left: 24px;
+}
+
+.resume-tags > .resume-tag--tool + .resume-tag--tool::before {
+  margin-right: 24px;
+}
+
+.resume-tag--tool img {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.82;
+}
+
+[data-theme="light"] .resume-tag--tool img {
+  filter: brightness(0);
+  opacity: 0.72;
+}
+
+.resume-tool-label {
+  line-height: 1;
 }
 
 /* ─── Responsive ─────────────────────────────────────────────────────────── */
@@ -2181,7 +2250,7 @@ html[lang="zh"] .featured-focus-list span + span::before {
   }
 
   .nav-links a::before {
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .nav-links a[data-i18n="nav-contact"] {
@@ -2192,7 +2261,7 @@ html[lang="zh"] .featured-focus-list span + span::before {
   .lang-toggle {
     height: 28px;
     padding: 0 4px;
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .theme-toggle + .lang-toggle {
@@ -2293,8 +2362,28 @@ html[lang="zh"] .featured-focus-list span + span::before {
   .detail-section .comparison-table,
   .detail-section .detail-outcomes,
   .resume-list,
+  .resume-skill-matrix,
   .resume-tags {
     grid-column: 1;
+  }
+
+  .resume-skill-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .resume-tags {
+    gap: 9px 14px;
+  }
+
+  .resume-tags > span + span,
+  .resume-tags > .resume-tag--tool + .resume-tag--tool {
+    margin-left: 0;
+  }
+
+  .resume-tags > span + span::before,
+  .resume-tags > .resume-tag--tool + .resume-tag--tool::before {
+    display: none;
   }
 
   .detail-meta,
